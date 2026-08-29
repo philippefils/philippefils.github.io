@@ -1,84 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philippe Fils | Electrical Engineer</title>
+
+    <title>Philippe Olivier Fils | Electrical Engineer</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="container">
-        <h1>Philippe Olivier Fils</h1>
-        <p class="subtitle">Electrical Engineer | Hardware Design | PCB | FPGA</p>
+<!-- ================= HEADER ================= -->
 
-        <div class="links">
-            <a href="https://www.linkedin.com/in/philippeolivierfils" target="_blank">LinkedIn</a>
-            <a href="mailto:philippe.fils@mail.mcgill.ca">Email</a>
-            <a href="resume.pdf" target="_blank">Resume</a>
+<header class="hero">
+
+    <div class="container">
+
+        <p class="eyebrow">
+            ELECTRICAL ENGINEER
+        </p>
+
+        <h1>
+            Philippe Olivier Fils
+        </h1>
+
+        <p class="tagline">
+            Hardware Design · PCB · FPGA · Embedded Systems
+        </p>
+
+        <div class="hero-links">
+
+            <a href="https://www.linkedin.com/in/philippeolivierfils"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="resume.pdf" target="_blank">
+                Resume
+            </a>
+
+            <a href="mailto:philippe.fils@mail.mcgill.ca">
+                Contact
+            </a>
+
         </div>
+
     </div>
+
 </header>
 
-<main class="container">
 
-    <section class="intro">
-        <h2>Projects</h2>
-        <p>
-            A selection of my engineering projects spanning PCB design,
-            mixed-signal electronics, FPGA development, embedded systems,
-            and electrical systems integration.
-        </p>
-    </section>
+<!-- ================= PROJECTS ================= -->
 
-    <section class="projects">
+<main>
 
-        <a href="projects/sipm-detector.html" class="project-card">
-            <h3>Multichannel SiPM Scintillation Detector</h3>
-            <p>
-                Mixed-signal hardware system for radiation detection,
-                featuring analog signal processing, power management,
-                PCB design, and embedded systems.
+<section class="projects-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                SELECTED WORK
             </p>
-            <span>PCB Design · Analog · Embedded Systems</span>
-        </a>
 
-        <a href="projects/formula-electric.html" class="project-card">
-            <h3>Formula Electric Shutdown Loop PCB</h3>
+            <h2>
+                Engineering Projects
+            </h2>
+
             <p>
-                Diagnostic PCB designed to monitor critical vehicle
-                shutdown systems and simplify fault identification.
+                A selection of projects spanning hardware design,
+                PCB development, FPGA systems, and embedded engineering.
             </p>
-            <span>PCB Design · Automotive · Hardware</span>
-        </a>
 
-        <a href="projects/fpga-design.html" class="project-card">
-            <h3>FPGA Digital Design</h3>
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- SIPM PROJECT -->
+
+            <a href="projects/sipm-detector.html"
+               class="project-card">
+
+                <div class="project-image">
+                    <span>PROJECT IMAGE</span>
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        MIXED-SIGNAL HARDWARE
+                    </p>
+
+                    <h3>
+                        Multichannel SiPM Scintillation Detector
+                    </h3>
+
+                    <p>
+                        Cost-efficient radiation detection system featuring
+                        analog signal processing, power management,
+                        PCB design, and embedded data acquisition.
+                    </p>
+
+                    <div class="tags">
+                        <span>Altium</span>
+                        <span>Analog</span>
+                        <span>PCB</span>
+                        <span>ESP32</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- FORMULA ELECTRIC -->
+
+            <a href="projects/formula-electric.html"
+               class="project-card">
+
+                <div class="project-image">
+                    <span>PROJECT IMAGE</span>
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        AUTOMOTIVE HARDWARE
+                    </p>
+
+                    <h3>
+                        Formula Electric Shutdown Loop
+                    </h3>
+
+                    <p>
+                        Diagnostic PCB designed to monitor critical
+                        vehicle systems and simplify electrical fault
+                        identification.
+                    </p>
+
+                    <div class="tags">
+                        <span>Altium</span>
+                        <span>PCB</span>
+                        <span>MOSFET</span>
+                        <span>Diagnostics</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- FPGA -->
+
+            <a href="projects/fpga-design.html"
+               class="project-card">
+
+                <div class="project-image">
+                    <span>PROJECT IMAGE</span>
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        DIGITAL HARDWARE
+                    </p>
+
+                    <h3>
+                        FPGA Digital Design
+                    </h3>
+
+                    <p>
+                        RTL and FPGA development involving digital logic,
+                        sequence detection, SerDes systems, and
+                        hardware verification.
+                    </p>
+
+                    <div class="tags">
+                        <span>FPGA</span>
+                        <span>Verilog</span>
+                        <span>VHDL</span>
+                        <span>RTL</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- ROBOTICS -->
+
+            <a href="projects/robotic-controller.html"
+               class="project-card">
+
+                <div class="project-image">
+                    <span>PROJECT IMAGE</span>
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        CONTROL SYSTEMS
+                    </p>
+
+                    <h3>
+                        Dynamic Robotic Manipulator Controller
+                    </h3>
+
+                    <p>
+                        Dynamic control system developed using ROS and
+                        Gazebo for joint-space and task-space robotic
+                        manipulation.
+                    </p>
+
+                    <div class="tags">
+                        <span>ROS</span>
+                        <span>C++</span>
+                        <span>Control</span>
+                        <span>Gazebo</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-section">
+
+    <div class="container about-grid">
+
+        <div>
+
+            <p class="eyebrow">
+                ABOUT
+            </p>
+
+            <h2>
+                Electrical Engineer focused on hardware.
+            </h2>
+
+        </div>
+
+
+        <div>
+
             <p>
-                FPGA and RTL design projects involving digital logic,
-                sequence detection, SerDes systems, and verification.
+                I am an Electrical Engineer with a focus on hardware design,
+                PCB development, FPGA systems, and embedded electronics.
+                My experience spans aerospace, medical technology,
+                digital design, and automotive systems.
             </p>
-            <span>FPGA · RTL · Verilog · VHDL</span>
-        </a>
 
-        <a href="projects/robotic-controller.html" class="project-card">
-            <h3>Dynamic Robotic Manipulator Controller</h3>
             <p>
-                Dynamic control system developed using ROS and Gazebo
-                for joint-space and task-space robotic manipulation.
+                I enjoy working across the hardware development process,
+                from circuit design and PCB layout to prototyping,
+                testing, and system integration.
             </p>
-            <span>Robotics · Control Systems · C++</span>
-        </a>
 
-    </section>
+        </div>
 
-</main>
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-    <p>© 2026 Philippe Olivier Fils</p>
+
+    <div class="container">
+
+        <p>
+            Philippe Olivier Fils
+        </p>
+
+        <div>
+
+            <a href="https://www.linkedin.com/in/philippeolivierfils"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="mailto:philippe.fils@mail.mcgill.ca">
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
 </footer>
+
+</main>
 
 </body>
 </html>
