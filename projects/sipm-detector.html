@@ -39,7 +39,6 @@
         <div class="project-meta">
 
             <div class="project-meta-item">
-
                 <span class="project-meta-label">
                     PROJECT TYPE
                 </span>
@@ -47,12 +46,10 @@
                 <span class="project-meta-value">
                     Engineering Capstone
                 </span>
-
             </div>
 
 
             <div class="project-meta-item">
-
                 <span class="project-meta-label">
                     APPLICATION
                 </span>
@@ -60,12 +57,10 @@
                 <span class="project-meta-value">
                     Medical Instrumentation
                 </span>
-
             </div>
 
 
             <div class="project-meta-item">
-
                 <span class="project-meta-label">
                     HARDWARE
                 </span>
@@ -73,12 +68,10 @@
                 <span class="project-meta-value">
                     SiPM · ESP32 · Analog Front-End
                 </span>
-
             </div>
 
 
             <div class="project-meta-item">
-
                 <span class="project-meta-label">
                     TOOLS
                 </span>
@@ -86,7 +79,6 @@
                 <span class="project-meta-value">
                     Altium Designer · LTSpice
                 </span>
-
             </div>
 
         </div>
@@ -101,8 +93,6 @@
 <div class="container">
 
     <div class="project-hero-image">
-
-        <!-- Replace this with your actual project photo -->
 
         <img src="../images/sipm/board.jpg"
              alt="Multichannel SiPM scintillation detector PCB">
@@ -135,23 +125,23 @@
 
         <p>
             In collaboration with the Montreal Neurological Institute,
-            my team and I developed a multichannel scintillation detector
-            for monitoring radioactivity during the synthesis of
-            positron emission tomography (PET) radiopharmaceuticals.
+            my team and I developed a two-channel scintillation detector
+            for monitoring radioactivity during the automated synthesis
+            of positron emission tomography (PET) radiopharmaceuticals.
         </p>
 
         <p>
-            The system uses silicon photomultipliers (SiPMs) to detect
-            photon emissions from radioactive samples and convert them
-            into electrical pulses. These signals are conditioned using
-            analog amplification and peak detection before being sampled
-            by a microcontroller and transmitted to a PC-based interface.
+            The detector uses silicon photomultipliers (SiPMs) to convert
+            detected scintillation photons into electrical pulses. These
+            pulses are amplified and processed through a peak-detection
+            stage before being sampled by an ESP32 ADC and transmitted
+            to a PC-based interface.
         </p>
 
         <p>
-            The goal was to develop a cost-effective, modular, and
-            scalable alternative to commercial detection systems while
-            maintaining the performance required for automated synthesis.
+            The objective was to develop a cost-effective, modular, and
+            scalable detector that could be integrated into an automated
+            radiopharmaceutical synthesis system.
         </p>
 
     </section>
@@ -166,14 +156,72 @@
         </p>
 
         <h2>
-            System Architecture
+            Signal Chain
         </h2>
 
         <p>
-            The detector was designed as a modular signal-processing
-            system, with each stage responsible for converting the
-            SiPM output into usable digital data.
+            The detector's signal path was designed around three main
+            hardware stages:
         </p>
+
+        <div class="engineering-highlights">
+
+            <div class="highlight">
+
+                <h3>
+                    01 — SiPM
+                </h3>
+
+                <p>
+                    MICROFC-60035-SMT-TR silicon photomultiplier operated
+                    at approximately 29.5 V bias.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    02 — Amplification
+                </h3>
+
+                <p>
+                    OPA354 non-inverting amplifier used to condition
+                    the SiPM output signal.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    03 — Peak Detection
+                </h3>
+
+                <p>
+                    OPA354-based peak detection circuit converts the
+                    short detector pulse into a measurable voltage.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    04 — Data Acquisition
+                </h3>
+
+                <p>
+                    ESP32 ADC samples the processed signal for
+                    measurement and analysis.
+                </p>
+
+            </div>
+
+        </div>
 
 
         <div class="project-image-large">
@@ -183,86 +231,126 @@
 
         </div>
 
+        <p>
+            The complete signal path is:
+            <strong>SiPM → Amplification → Peak Detection → ESP32 ADC</strong>.
+        </p>
 
         <p>
-            The signal path consists of the SiPM sensor, analog signal
-            conditioning, peak detection, ADC acquisition, and
-            microcontroller-based data transmission to the user interface.
+            The resulting measurement data is transmitted to a PC-based
+            interface for monitoring and analysis.
         </p>
 
     </section>
 
 
-    <!-- ================= HARDWARE DESIGN ================= -->
+    <!-- ================= ANALOG FRONT-END ================= -->
 
     <section class="project-section">
 
         <p class="eyebrow">
-            03 — HARDWARE DESIGN
+            03 — ANALOG FRONT-END
         </p>
 
         <h2>
-            Mixed-Signal Hardware
+            Signal Amplification & Peak Detection
         </h2>
 
+
+        <h3>
+            Signal Amplification
+        </h3>
+
         <p>
-            A major focus of the project was designing the analog
-            front-end required to condition the low-level SiPM signals.
-            The circuit incorporates amplification and peak detection
-            stages to produce a signal suitable for microcontroller
-            acquisition.
+            The SiPM produces relatively small electrical pulses that
+            require amplification before being sampled by the
+            microcontroller.
+        </p>
+
+        <p>
+            The amplification stage uses an OPA354 in a non-inverting
+            configuration. The SiPM signal is connected to the
+            non-inverting input through a series resistor, while the
+            feedback network determines the amplifier response and gain.
         </p>
 
 
-        <div class="project-two-column">
+        <div class="project-image-large">
 
-            <div>
+            <img src="../images/sipm/amplifier-schematic.png"
+                 alt="SiPM amplification circuit schematic">
 
-                <img src="../images/sipm/schematic.png"
-                     alt="SiPM analog signal processing schematic">
-
-            </div>
+        </div>
 
 
-            <div>
+        <h3>
+            Peak Detection
+        </h3>
 
-                <p>
-                    The analog stages were designed and tuned to preserve
-                    the relevant characteristics of the detector pulses
-                    while providing sufficient signal amplitude for ADC
-                    sampling.
-                </p>
+        <p>
+            Following amplification, the signal passes through a
+            peak-detection circuit built around two OPA354 amplifiers,
+            an NMOS transistor, and a BAT54S Schottky diode.
+        </p>
 
-                <p>
-                    Particular attention was given to signal integrity,
-                    power distribution, and the interaction between the
-                    analog and digital portions of the system.
-                </p>
+        <p>
+            The circuit captures the peak value of the detector pulse,
+            converting the short-duration SiPM signal into a voltage
+            that can be sampled reliably by the ESP32 ADC.
+        </p>
 
-            </div>
+
+        <div class="project-image-large">
+
+            <img src="../images/sipm/peak-detector-schematic.png"
+                 alt="SiPM peak detection circuit schematic">
 
         </div>
 
     </section>
 
 
-    <!-- ================= PCB DESIGN ================= -->
+    <!-- ================= POWER & PCB ================= -->
 
     <section class="project-section">
 
         <p class="eyebrow">
-            04 — PCB DESIGN
+            04 — POWER & PCB DESIGN
         </p>
+
+        <h2>
+            Power Architecture
+        </h2>
+
+        <p>
+            The board is powered from a 5 V barrel-jack input and
+            generates the approximately 29.5 V SiPM bias using a
+            boost converter.
+        </p>
+
+        <p>
+            The system also uses the 3.3 V supply associated with the
+            ESP32 for the low-voltage digital circuitry. Local VDD
+            decoupling capacitors were used throughout the design to
+            support stable operation of the active devices.
+        </p>
+
 
         <h2>
             PCB Development
         </h2>
 
         <p>
-            The system was implemented on a custom PCB designed in
-            Altium Designer. The layout integrates the analog signal
-            processing circuitry, power management, microcontroller,
-            and supporting components into a compact hardware platform.
+            The detector was implemented on a two-layer PCB designed
+            in Altium Designer.
+        </p>
+
+        <p>
+            The analog circuitry was physically clustered together,
+            with sensitive signal paths kept as short and direct as
+            practical. This approach helped minimize unnecessary trace
+            length and potential coupling into the low-level detector
+            signals.
         </p>
 
 
@@ -274,11 +362,34 @@
         </div>
 
 
-        <p>
-            The PCB layout was developed with particular consideration
-            for mixed-signal design, power integrity, grounding,
-            component placement, and routing of sensitive analog signals.
-        </p>
+        <div class="project-two-column">
+
+            <div>
+
+                <img src="../images/sipm/board.jpg"
+                     alt="Assembled SiPM detector PCB">
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    The PCB was manufactured by JLCPCB and subsequently
+                    assembled by me using a combination of reflow
+                    soldering and hand soldering.
+                </p>
+
+                <p>
+                    The prototype used a common ground architecture.
+                    A future revision would provide an opportunity to
+                    further evaluate analog/digital grounding and power
+                    distribution strategies.
+                </p>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -288,18 +399,24 @@
     <section class="project-section">
 
         <p class="eyebrow">
-            05 — EMBEDDED SYSTEM
+            05 — EMBEDDED DATA ACQUISITION
         </p>
 
         <h2>
-            Data Acquisition & Firmware
+            ESP32 Integration
         </h2>
 
         <p>
-            An ESP32 microcontroller was used to sample the conditioned
-            detector signals and transmit the acquired data to a
-            computer for visualization and analysis.
+            The amplified and peak-detected signal is sampled directly
+            by the ESP32 ADC.
         </p>
+
+        <p>
+            Firmware was developed in C++ to handle signal acquisition
+            and transmission of measurement data to a PC-based graphical
+            interface.
+        </p>
+
 
         <div class="engineering-highlights">
 
@@ -310,8 +427,8 @@
                 </h3>
 
                 <p>
-                    Configured analog-to-digital acquisition to capture
-                    the processed detector signal.
+                    Sampled the processed detector signal using the
+                    ESP32 ADC.
                 </p>
 
             </div>
@@ -324,8 +441,8 @@
                 </h3>
 
                 <p>
-                    Developed firmware in C++ to control acquisition
-                    and communicate measurement data.
+                    Developed C++ firmware to control acquisition and
+                    communicate measurement data.
                 </p>
 
             </div>
@@ -339,7 +456,7 @@
 
                 <p>
                     Transmitted measurement data to a PC-based interface
-                    for real-time monitoring.
+                    for monitoring and analysis.
                 </p>
 
             </div>
@@ -372,14 +489,29 @@
         </p>
 
         <h2>
-            Testing & Validation
+            Hardware Validation
         </h2>
 
         <p>
-            The hardware was tested throughout development to verify
-            circuit functionality and system performance. Individual
-            circuit stages were evaluated before integrating them into
-            the complete detector.
+            The analog circuitry was tested independently before
+            integration into the complete system.
+        </p>
+
+        <p>
+            A function generator was used to provide representative
+            input signals to the analog front-end, while an oscilloscope
+            was used to observe and characterize the resulting signals
+            at different stages of the circuit.
+        </p>
+
+        <p>
+            The completed detector was subsequently tested with the SiPM
+            to capture actual detector pulses.
+        </p>
+
+        <p>
+            Additional electrical measurements were performed using a
+            multimeter during hardware bring-up and debugging.
         </p>
 
 
@@ -395,12 +527,8 @@
 
             <div>
 
-                <p>
-                    Testing included electrical measurements,
-                    signal characterization, and validation of the
-                    interaction between the analog, digital, and
-                    embedded portions of the system.
-                </p>
+                <img src="../images/sipm/oscilloscope.jpg"
+                     alt="Oscilloscope capture of SiPM signal">
 
             </div>
 
@@ -409,79 +537,44 @@
     </section>
 
 
-    <!-- ================= ENGINEERING CHALLENGES ================= -->
+    <!-- ================= ENGINEERING LESSONS ================= -->
 
     <section class="project-section">
 
         <p class="eyebrow">
-            07 — ENGINEERING CHALLENGES
+            07 — ENGINEERING LESSONS
         </p>
 
         <h2>
-            Engineering Challenges
+            Design Improvements
         </h2>
 
+        <p>
+            The project provided practical experience designing and
+            integrating a complete mixed-signal measurement system,
+            while also identifying areas where the design could be
+            improved in a future revision.
+        </p>
 
-        <div class="engineering-highlights">
+        <p>
+            In particular, additional filtering of the analog signal
+            path would be considered in a subsequent revision to
+            improve noise rejection and signal conditioning.
+        </p>
 
+        <p>
+            The grounding and analog/digital power architecture could
+            also be refined further. The prototype used a common ground
+            architecture, and a future revision would provide an
+            opportunity to evaluate improved analog/digital isolation
+            and grounding strategies.
+        </p>
 
-            <div class="highlight">
-
-                <h3>
-                    Low-Level Signal Processing
-                </h3>
-
-                <p>
-                    Designed analog circuitry capable of conditioning
-                    detector pulses for reliable digital acquisition.
-                </p>
-
-            </div>
-
-
-            <div class="highlight">
-
-                <h3>
-                    Mixed-Signal Integration
-                </h3>
-
-                <p>
-                    Managed the interaction between sensitive analog
-                    circuitry and digital electronics on the same PCB.
-                </p>
-
-            </div>
-
-
-            <div class="highlight">
-
-                <h3>
-                    Power Management
-                </h3>
-
-                <p>
-                    Designed and integrated power circuitry supporting
-                    the different requirements of the system.
-                </p>
-
-            </div>
-
-
-            <div class="highlight">
-
-                <h3>
-                    System-Level Integration
-                </h3>
-
-                <p>
-                    Combined sensing, signal processing, embedded
-                    acquisition, and software into one functional system.
-                </p>
-
-            </div>
-
-
-        </div>
+        <p>
+            These lessons reinforced the importance of considering
+            signal integrity, noise, grounding, and power distribution
+            early in the design of low-level mixed-signal hardware.
+        </p>
 
     </section>
 
@@ -503,14 +596,16 @@
 
             <span>Mixed-Signal Design</span>
             <span>Analog Signal Processing</span>
+            <span>SiPM Detectors</span>
             <span>PCB Design</span>
             <span>Altium Designer</span>
             <span>Power Electronics</span>
-            <span>Embedded Systems</span>
+            <span>Boost Converter</span>
             <span>ESP32</span>
             <span>C++</span>
-            <span>Data Acquisition</span>
-            <span>LTSpice</span>
+            <span>ADC Data Acquisition</span>
+            <span>Oscilloscope Debugging</span>
+            <span>Hardware Validation</span>
 
         </div>
 
