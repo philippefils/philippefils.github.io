@@ -1,1 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SiPM Scintillation Detector | Philippe Olivier Fils</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= PROJECT HERO ================= -->
+
+<header class="project-hero">
+
+    <div class="container">
+
+        <p class="eyebrow">
+            MIXED-SIGNAL HARDWARE
+        </p>
+
+        <h1>
+            Multichannel SiPM Scintillation Detector
+        </h1>
+
+        <p class="project-subtitle">
+            A cost-effective, modular scintillation detector designed
+            for automated PET radiopharmaceutical synthesis.
+        </p>
+
+
+        <div class="project-meta">
+
+            <div class="project-meta-item">
+
+                <span class="project-meta-label">
+                    PROJECT TYPE
+                </span>
+
+                <span class="project-meta-value">
+                    Engineering Capstone
+                </span>
+
+            </div>
+
+
+            <div class="project-meta-item">
+
+                <span class="project-meta-label">
+                    APPLICATION
+                </span>
+
+                <span class="project-meta-value">
+                    Medical Instrumentation
+                </span>
+
+            </div>
+
+
+            <div class="project-meta-item">
+
+                <span class="project-meta-label">
+                    HARDWARE
+                </span>
+
+                <span class="project-meta-value">
+                    SiPM · ESP32 · Analog Front-End
+                </span>
+
+            </div>
+
+
+            <div class="project-meta-item">
+
+                <span class="project-meta-label">
+                    TOOLS
+                </span>
+
+                <span class="project-meta-value">
+                    Altium Designer · LTSpice
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO IMAGE ================= -->
+
+<div class="container">
+
+    <div class="project-hero-image">
+
+        <!-- Replace this with your actual project photo -->
+
+        <img src="../images/sipm/board.jpg"
+             alt="Multichannel SiPM scintillation detector PCB">
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROJECT CONTENT ================= -->
+
+<main class="project-page">
+
+<section class="project-content-section">
+
+<div class="container">
+
+
+    <!-- ================= OVERVIEW ================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            01 — OVERVIEW
+        </p>
+
+        <h2>
+            Project Overview
+        </h2>
+
+        <p>
+            In collaboration with the Montreal Neurological Institute,
+            my team and I developed a multichannel scintillation detector
+            for monitoring radioactivity during the synthesis of
+            positron emission tomography (PET) radiopharmaceuticals.
+        </p>
+
+        <p>
+            The system uses silicon photomultipliers (SiPMs) to detect
+            photon emissions from radioactive samples and convert them
+            into electrical pulses. These signals are conditioned using
+            analog amplification and peak detection before being sampled
+            by a microcontroller and transmitted to a PC-based interface.
+        </p>
+
+        <p>
+            The goal was to develop a cost-effective, modular, and
+            scalable alternative to commercial detection systems while
+            maintaining the performance required for automated synthesis.
+        </p>
+
+    </section>
+
+
+    <!-- ================= SYSTEM ARCHITECTURE ================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            02 — SYSTEM ARCHITECTURE
+        </p>
+
+        <h2>
+            System Architecture
+        </h2>
+
+        <p>
+            The detector was designed as a modular signal-processing
+            system, with each stage responsible for converting the
+            SiPM output into usable digital data.
+        </p>
+
+
+        <div class="project-image-large">
+
+            <img src="../images/sipm/block-diagram.png"
+                 alt="SiPM detector system block diagram">
+
+        </div>
+
+
+        <p>
+            The signal path consists of the SiPM sensor, analog signal
+            conditioning, peak detection, ADC acquisition, and
+            microcontroller-based data transmission to the user interface.
+        </p>
+
+    </section>
+
+
+    <!-- ================= HARDWARE DESIGN ================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            03 — HARDWARE DESIGN
+        </p>
+
+        <h2>
+            Mixed-Signal Hardware
+        </h2>
+
+        <p>
+            A major focus of the project was designing the analog
+            front-end required to condition the low-level SiPM signals.
+            The circuit incorporates amplification and peak detection
+            stages to produce a signal suitable for microcontroller
+            acquisition.
+        </p>
+
+
+        <div class="project-two-column">
+
+            <div>
+
+                <img src="../images/sipm/schematic.png"
+                     alt="SiPM analog signal processing schematic">
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    The analog stages were designed and tuned to preserve
+                    the relevant characteristics of the detector pulses
+                    while providing sufficient signal amplitude for ADC
+                    sampling.
+                </p>
+
+                <p>
+                    Particular attention was given to signal integrity,
+                    power distribution, and the interaction between the
+                    analog and digital portions of the system.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PCB DESIGN ================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            04 — PCB DESIGN
+        </p>
+
+        <h2>
+            PCB Development
+        </h2>
+
+        <p>
+            The system was implemented on a custom PCB designed in
+            Altium Designer. The layout integrates the analog signal
+            processing circuitry, power management, microcontroller,
+            and supporting components into a compact hardware platform.
+        </p>
+
+
+        <div class="project-image-large">
+
+            <img src="../images/sipm/pcb-layout.png"
+                 alt="SiPM detector PCB layout">
+
+        </div>
+
+
+        <p>
+            The PCB layout was developed with particular consideration
+            for mixed-signal design, power integrity, grounding,
+            component placement, and routing of sensitive analog signals.
+        </p>
+
+    </section>
+
+
+    <!-- ================= EMBEDDED SYSTEM ================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            05 — EMBEDDED SYSTEM
+        </p>
+
+        <h2>
+            Data Acquisition & Firmware
+        </h2>
+
+        <p>
+            An ESP32 microcontroller was used to sample the conditioned
+            detector signals and transmit the acquired data to a
+            computer for visualization and analysis.
+        </p>
+
+        <div class="engineering-highlights">
+
+            <div class="highlight">
+
+                <h3>
+                    ADC Acquisition
+                </h3>
+
+                <p>
+                    Configured analog-to-digital acquisition to capture
+                    the processed detector signal.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    Embedded Firmware
+                </h3>
+
+                <p>
+                    Developed firmware in C++ to control acquisition
+                    and communicate measurement data.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    Data Transmission
+                </h3>
+
+                <p>
+                    Transmitted measurement data to a PC-based interface
+                    for real-time monitoring.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    System Integration
+                </h3>
+
+                <p>
+                    Integrated sensing, analog processing, firmware,
+                    power, and software into a complete system.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TESTING ================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            06 — TESTING & VALIDATION
+        </p>
+
+        <h2>
+            Testing & Validation
+        </h2>
+
+        <p>
+            The hardware was tested throughout development to verify
+            circuit functionality and system performance. Individual
+            circuit stages were evaluated before integrating them into
+            the complete detector.
+        </p>
+
+
+        <div class="project-two-column">
+
+            <div>
+
+                <img src="../images/sipm/test-setup.jpg"
+                     alt="SiPM detector test setup">
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    Testing included electrical measurements,
+                    signal characterization, and validation of the
+                    interaction between the analog, digital, and
+                    embedded portions of the system.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ENGINEERING CHALLENGES ================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            07 — ENGINEERING CHALLENGES
+        </p>
+
+        <h2>
+            Engineering Challenges
+        </h2>
+
+
+        <div class="engineering-highlights">
+
+
+            <div class="highlight">
+
+                <h3>
+                    Low-Level Signal Processing
+                </h3>
+
+                <p>
+                    Designed analog circuitry capable of conditioning
+                    detector pulses for reliable digital acquisition.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    Mixed-Signal Integration
+                </h3>
+
+                <p>
+                    Managed the interaction between sensitive analog
+                    circuitry and digital electronics on the same PCB.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    Power Management
+                </h3>
+
+                <p>
+                    Designed and integrated power circuitry supporting
+                    the different requirements of the system.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    System-Level Integration
+                </h3>
+
+                <p>
+                    Combined sensing, signal processing, embedded
+                    acquisition, and software into one functional system.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TECHNICAL HIGHLIGHTS ================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            08 — TECHNICAL HIGHLIGHTS
+        </p>
+
+        <h2>
+            Skills & Technologies
+        </h2>
+
+
+        <div class="project-tags">
+
+            <span>Mixed-Signal Design</span>
+            <span>Analog Signal Processing</span>
+            <span>PCB Design</span>
+            <span>Altium Designer</span>
+            <span>Power Electronics</span>
+            <span>Embedded Systems</span>
+            <span>ESP32</span>
+            <span>C++</span>
+            <span>Data Acquisition</span>
+            <span>LTSpice</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BACK ================= -->
+
+    <section class="project-section">
+
+        <a href="../index.html"
+           class="back-to-projects">
+            ← Back to Projects
+        </a>
+
+    </section>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            Philippe Olivier Fils
+        </p>
+
+        <div>
+
+            <a href="https://www.linkedin.com/in/philippeolivierfils"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="mailto:philippe.fils@mail.mcgill.ca">
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
