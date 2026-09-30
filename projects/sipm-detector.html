@@ -62,8 +62,8 @@
         <div class="project-hero-image">
 
             <img
-                src="../images/sipm/board.jpg"
-                alt="Assembled SiPM scintillation detector PCB"
+                src="../images/sipm/main-pcb-assembled.jpg"
+                alt="Assembled SiPM detector main PCB"
             >
 
         </div>
@@ -106,7 +106,7 @@
                 </span>
 
                 <span class="project-spec-value">
-                    Sole Designer
+                    Electrical Hardware Designer
                 </span>
 
             </div>
@@ -180,7 +180,7 @@
             <div class="project-spec">
 
                 <span class="project-spec-label">
-                    SI PM BIAS
+                    SiPM BIAS
                 </span>
 
                 <span class="project-spec-value">
@@ -222,9 +222,10 @@
         </h2>
 
         <p>
-            I developed a modular scintillation detector for monitoring
-            radioactivity during the automated synthesis of positron
-            emission tomography (PET) radiopharmaceuticals.
+            I developed the electrical hardware for a modular
+            scintillation detector designed to monitor radioactivity
+            during the automated synthesis of positron emission
+            tomography (PET) radiopharmaceuticals.
         </p>
 
         <p>
@@ -235,12 +236,21 @@
         </p>
 
         <p>
-            The modular architecture was designed to make the detector
-            scalable and maintainable. Modules can be stacked vertically
-            to fit within the user's workspace, while power is passed
-            between modules so that only the first module needs to be
-            connected to the external 5 V supply.
+            The modular architecture allows additional detector modules
+            to be connected as required. Modules can be stacked
+            vertically, with power passed between modules so that only
+            the first module requires an external 5 V power connection.
         </p>
+
+
+        <div class="project-image-large">
+
+            <img
+                src="../images/sipm/modular-cross.png"
+                alt="Cross-section view of the stacked modular detector system"
+            >
+
+        </div>
 
     </section>
 
@@ -256,14 +266,13 @@
         </p>
 
         <h2>
-            Modular Signal Acquisition
+            From Photon Detection to Data
         </h2>
 
         <p>
-            Each module combines two detector channels with local signal
-            processing, power management, and an ESP32-based data
-            acquisition system. Multiple modules can be connected through
-            the module-to-module power interface.
+            Each module combines two SiPM detector channels with local
+            analog signal processing, power management, and an ESP32-based
+            data acquisition system.
         </p>
 
 
@@ -280,7 +289,7 @@
                 </h3>
 
                 <p>
-                    Two detector channels per module
+                    Converts scintillation events into electrical pulses
                 </p>
 
             </div>
@@ -324,7 +333,7 @@
                 </h3>
 
                 <p>
-                    Analog peak capture and hold
+                    Captures and holds pulse amplitude
                 </p>
 
             </div>
@@ -346,7 +355,7 @@
                 </h3>
 
                 <p>
-                    ADC acquisition and control
+                    ADC acquisition and peak control
                 </p>
 
             </div>
@@ -354,14 +363,11 @@
         </div>
 
 
-        <div class="project-image-large">
-
-            <img
-                src="../images/sipm/block-diagram.png"
-                alt="Modular SiPM detector system architecture"
-            >
-
-        </div>
+        <p>
+            The processed signal is acquired by the ESP32 and transmitted
+            through the system's wireless communication interface to a
+            computer-based capture system.
+        </p>
 
     </section>
 
@@ -377,20 +383,19 @@
         </p>
 
         <h2>
-            From SiPM Pulse to Measurable Signal
+            SiPM Signal Conditioning
         </h2>
 
         <p>
-            The SiPM produces short electrical pulses when scintillation
-            events are detected. The signal-processing chain was designed
-            to amplify these pulses and convert them into a signal that
-            could be reliably sampled by the ESP32 ADC.
+            SiPM output pulses are short-duration, low-amplitude signals
+            that require amplification before being sampled by the
+            microcontroller.
         </p>
 
         <p>
             The amplification stage was designed for a gain of
             approximately <strong>30 V/V</strong>. The amplified signal
-            is then processed by a peak detector built around high-speed
+            is then processed by a peak-detection circuit using
             operational amplifiers, a BSS138 MOSFET, and a Schottky
             diode.
         </p>
@@ -399,8 +404,8 @@
         <div class="project-image-large">
 
             <img
-                src="../images/sipm/amplifier-schematic.png"
-                alt="SiPM amplification and signal processing circuit"
+                src="../images/sipm/ltspice-signal-processing-circuit.png"
+                alt="LTSpice model of the SiPM signal processing circuit"
             >
 
         </div>
@@ -411,11 +416,10 @@
         </h3>
 
         <p>
-            The peak detector charges a hold capacitor when a signal peak
-            is detected. A BSS138 MOSFET is used to rapidly discharge the
-            capacitor when commanded, allowing the circuit to capture
-            subsequent events without relying solely on the passive RC
-            discharge time.
+            When a signal peak is detected, the hold capacitor is charged
+            to the peak voltage. A BSS138 MOSFET provides controlled
+            discharge of the capacitor, allowing the circuit to prepare
+            for subsequent detector events.
         </p>
 
         <p>
@@ -428,8 +432,8 @@
         <div class="project-image-large">
 
             <img
-                src="../images/sipm/peak-detector-schematic.png"
-                alt="SiPM peak detector circuit"
+                src="../images/sipm/sipm-peak-detect-sim.png"
+                alt="Simulated SiPM peak detection response"
             >
 
         </div>
@@ -452,78 +456,17 @@
         </h2>
 
         <p>
-            The signal-processing circuitry was modeled in LTSpice before
-            PCB implementation. Representative SiPM pulses were generated
-            using LTSpice's exponential source functionality to evaluate
-            the response of the signal chain across a range of input
-            amplitudes.
+            LTSpice was used to model the signal-processing circuitry
+            before PCB implementation. Representative SiPM pulses were
+            generated using an exponential source to evaluate the
+            response of the circuit across a range of input amplitudes.
         </p>
 
         <p>
             Input pulses of approximately <strong>6 mV, 32 mV, and
-            100 mV</strong> were modeled to evaluate the dynamic range
-            of the amplification and peak-detection circuitry.
+            100 mV</strong> were modeled to evaluate the response of
+            the amplification and peak-detection circuitry.
         </p>
-
-
-        <div class="engineering-highlights">
-
-            <div class="highlight">
-
-                <h3>
-                    Raw SiPM Signals
-                </h3>
-
-                <p>
-                    Simulated detector pulses spanning approximately
-                    6 mV to 100 mV.
-                </p>
-
-            </div>
-
-
-            <div class="highlight">
-
-                <h3>
-                    30 V/V Amplification
-                </h3>
-
-                <p>
-                    Evaluated the amplified response across different
-                    input pulse amplitudes.
-                </p>
-
-            </div>
-
-
-            <div class="highlight">
-
-                <h3>
-                    Peak Detection
-                </h3>
-
-                <p>
-                    Verified that the amplified pulses could be captured
-                    and held for ADC acquisition.
-                </p>
-
-            </div>
-
-
-            <div class="highlight">
-
-                <h3>
-                    LTSpice Modeling
-                </h3>
-
-                <p>
-                    Used circuit simulation to validate the signal chain
-                    before hardware implementation.
-                </p>
-
-            </div>
-
-        </div>
 
 
         <div class="project-two-column">
@@ -531,8 +474,8 @@
             <div>
 
                 <img
-                    src="../images/sipm/raw-signals.png"
-                    alt="LTSpice simulation of raw SiPM signals"
+                    src="../images/sipm/ltspice-raw-signal-generator-circuit.png"
+                    alt="LTSpice circuit used to generate representative SiPM signals"
                 >
 
             </div>
@@ -541,8 +484,8 @@
             <div>
 
                 <img
-                    src="../images/sipm/amplified-signals.png"
-                    alt="LTSpice simulation of amplified SiPM signals"
+                    src="../images/sipm/sipm-raw-signals-sim.png"
+                    alt="LTSpice simulation of representative raw SiPM signals"
                 >
 
             </div>
@@ -550,12 +493,37 @@
         </div>
 
 
-        <div class="project-image-large">
+        <h3>
+            Signal Chain Response
+        </h3>
 
-            <img
-                src="../images/sipm/peak-detected-signals.png"
-                alt="LTSpice simulation of peak detected SiPM signals"
-            >
+        <p>
+            The simulated signal was evaluated through the amplification
+            and peak-detection stages to verify the expected behavior
+            before hardware implementation.
+        </p>
+
+
+        <div class="project-two-column">
+
+            <div>
+
+                <img
+                    src="../images/sipm/sipm-amp-sim.png"
+                    alt="LTSpice simulation of amplified SiPM signals"
+                >
+
+            </div>
+
+
+            <div>
+
+                <img
+                    src="../images/sipm/sipm-peak-detect-sim.png"
+                    alt="LTSpice simulation of peak detected SiPM signals"
+                >
+
+            </div>
 
         </div>
 
@@ -578,32 +546,46 @@
 
         <p>
             Each module is powered from a regulated <strong>5 V DC</strong>
-            external supply. The module distributes this supply to the
-            low-voltage circuitry and generates the approximately
-            <strong>29.5 V bias</strong> required by the SiPM.
+            external supply. The main power input is distributed to the
+            module circuitry while a DC-DC boost converter generates the
+            approximately <strong>29.5 V bias</strong> required by the
+            SiPM.
         </p>
 
         <p>
             A module-to-module power interface allows multiple detector
             modules to be stacked together. The first module connects to
             the external power supply and passes power to subsequent
-            modules through the interconnect, reducing the number of
-            external power connections required by the system.
+            modules through the interconnect.
         </p>
 
         <p>
             Each module also includes its own power switch, allowing
             individual modules to be enabled or disabled while remaining
-            part of the same power chain.
+            part of the connected power chain.
         </p>
 
 
-        <div class="project-image-large">
+        <div class="project-two-column">
 
-            <img
-                src="../images/sipm/power-schematic.png"
-                alt="SiPM detector power architecture"
-            >
+            <div>
+
+                <img
+                    src="../images/sipm/ltspice-dcdc-circuit.png"
+                    alt="LTSpice model of the SiPM DC-DC boost circuit"
+                >
+
+            </div>
+
+
+            <div>
+
+                <img
+                    src="../images/sipm/DC-DC-boost-sim.png"
+                    alt="Simulation of the boosted SiPM bias supply"
+                >
+
+            </div>
 
         </div>
 
@@ -627,12 +609,12 @@
             <div class="highlight">
 
                 <h3>
-                    SiPM Bias
+                    29.5 V SiPM Bias
                 </h3>
 
                 <p>
-                    DC-DC boost circuitry generates approximately
-                    29.5 V for the SiPM.
+                    DC-DC boost circuitry generates the bias required
+                    for SiPM operation.
                 </p>
 
             </div>
@@ -677,68 +659,74 @@
     <section class="project-section">
 
         <p class="eyebrow">
-            06 — PCB DESIGN & IMPLEMENTATION
+            06 — PCB DESIGN
         </p>
 
         <h2>
-            From Circuit to Hardware
+            From Schematic to Hardware
         </h2>
 
         <p>
-            The detector electronics were implemented across multiple
-            custom PCBs. The main PCB integrates the signal-processing
-            circuitry, power circuitry, microcontroller, SiPM interface,
-            and hardware debugging interfaces.
+            I designed the electrical hardware and PCB implementation
+            for the detector module in Altium Designer. The main PCB
+            integrates the signal-processing circuitry, power circuitry,
+            microcontroller, SiPM interface, and hardware debugging
+            interfaces.
         </p>
 
         <p>
-            The PCB layout was developed in Altium Designer with the
-            objective of reducing the overall module size while
-            maintaining access to important signals and interfaces.
+            The layout was optimized to reduce the overall module size
+            while maintaining accessible test points and interfaces for
+            hardware bring-up and troubleshooting.
         </p>
 
 
-        <div class="project-two-column">
+        <div class="project-image-large">
 
-            <div>
+            <img
+                src="../images/sipm/main-pcb-schematic.png"
+                alt="Main SiPM detector PCB schematic"
+            >
 
-                <img
-                    src="../images/sipm/pcb-layout.png"
-                    alt="SiPM detector PCB layout in Altium Designer"
-                >
-
-            </div>
+        </div>
 
 
-            <div>
+        <div class="project-image-large">
 
-                <img
-                    src="../images/sipm/board.jpg"
-                    alt="Assembled SiPM detector main PCB"
-                >
+            <img
+                src="../images/sipm/main-pcb-layout.png"
+                alt="Main SiPM detector PCB layout"
+            >
 
-            </div>
+        </div>
+
+
+        <div class="project-image-large">
+
+            <img
+                src="../images/sipm/main-pcb-assembled.jpg"
+                alt="Assembled main SiPM detector PCB"
+            >
 
         </div>
 
 
         <h3>
-            Hardware Debugging & Serviceability
+            Design for Debugging
         </h3>
 
         <p>
             The main PCB includes dedicated test points and BNC
             connections that allow the SiPM signal to be probed at
-            different stages of the analog signal chain. An OLED
-            provides module information, while a reset button and
-            accessible interfaces simplify hardware bring-up and
-            troubleshooting.
+            different stages of the analog signal-processing chain.
+            Additional interfaces include a power indicator, OLED
+            display, and reset button.
         </p>
 
         <p>
-            The ESP32 and SiPM interface were connected through headers
-            so that these components could be replaced without requiring
-            a new main PCB.
+            The ESP32 and SiPM interfaces use headers to support
+            component replacement and simplify troubleshooting without
+            requiring a new main PCB.
         </p>
 
     </section>
@@ -759,41 +747,17 @@
         </h2>
 
         <p>
-            The PCBs were assembled using a combination of reflow
-            soldering, stencil-applied solder paste, hand soldering,
-            and hot-air rework.
+            The PCB was assembled using a combination of stencil-applied
+            solder paste, reflow soldering, hand soldering, and hot-air
+            rework.
         </p>
 
         <p>
-            Surface-mount components were assembled using a reflow
+            Surface-mount components were assembled using the reflow
             process, while through-hole components and selected
-            interfaces were hand soldered. Hot-air rework was also used
-            to correct SiPM soldering issues during bring-up.
+            interfaces were hand soldered. Hot-air rework was used to
+            correct SiPM soldering issues during assembly and bring-up.
         </p>
-
-
-        <div class="project-two-column">
-
-            <div>
-
-                <img
-                    src="../images/sipm/sipm-pcb.jpg"
-                    alt="Assembled SiPM PCB"
-                >
-
-            </div>
-
-
-            <div>
-
-                <img
-                    src="../images/sipm/main-pcb.jpg"
-                    alt="Assembled main detector PCB"
-                >
-
-            </div>
-
-        </div>
 
     </section>
 
@@ -816,16 +780,14 @@
             An ESP32 is used to acquire the processed detector signal
             through its ADC and control the peak-detection circuitry.
             Firmware manages the peak-hold and discharge behavior,
-            allowing the analog circuit to capture short-duration SiPM
-            pulses in a form suitable for digital acquisition.
+            allowing short-duration SiPM pulses to be captured in a
+            form suitable for digital acquisition.
         </p>
 
         <p>
-            A dedicated RXTX module provides the wireless communication
-            interface between the detector system and the user's
-            computer, allowing scintillation measurements to be
-            monitored without requiring a direct wired connection to
-            the detector modules.
+            The detector system also includes a wireless communication
+            interface that allows measurement data to be transmitted
+            to the computer-based capture system.
         </p>
 
 
@@ -838,7 +800,7 @@
                 </h3>
 
                 <p>
-                    Sampled the peak-detected signal using the ESP32 ADC.
+                    Samples the peak-detected signal using the ESP32 ADC.
                 </p>
 
             </div>
@@ -865,8 +827,8 @@
                 </h3>
 
                 <p>
-                    RXTX hardware provides wireless communication with
-                    the computer-based capture system.
+                    Provides communication between the detector system
+                    and the computer-based capture system.
                 </p>
 
             </div>
@@ -875,11 +837,11 @@
             <div class="highlight">
 
                 <h3>
-                    Modular System
+                    Modular Expansion
                 </h3>
 
                 <p>
-                    Multiple detector modules can be combined to
+                    Additional detector modules can be connected to
                     increase the number of monitored channels.
                 </p>
 
@@ -901,46 +863,104 @@
         </p>
 
         <h2>
-            Hardware Bring-Up & Signal Validation
+            Hardware Bring-Up & Validation
         </h2>
 
         <p>
-            The analog signal-processing stages were evaluated
-            independently before integration into the complete detector.
-            A function generator was used to provide representative
-            input signals while an oscilloscope was used to observe
-            the response through the amplification and peak-detection
-            stages.
+            Each portion of the hardware was tested individually during
+            bring-up to validate PCB assembly, power distribution, and
+            signal-processing functionality before system integration.
+        </p>
+
+
+        <div class="engineering-highlights">
+
+            <div class="highlight">
+
+                <h3>
+                    Continuity Testing
+                </h3>
+
+                <p>
+                    Used a multimeter to verify sensitive nodes, solder
+                    connections, signal paths, and the absence of shorts
+                    between power and ground.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    SiPM Assembly
+                </h3>
+
+                <p>
+                    Verified SiPM connections and pin isolation using
+                    resistance measurements. An incorrectly oriented
+                    SiPM was identified and corrected through rework.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    Power Validation
+                </h3>
+
+                <p>
+                    Measured the main power rail, shared module power
+                    lines, and component supply inputs to verify the
+                    expected voltage levels.
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>
+                    Signal-Chain Testing
+                </h3>
+
+                <p>
+                    Used a signal generator and oscilloscope to validate
+                    amplifier gain, noise sensitivity, and peak-detector
+                    response.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h3>
+            Amplifier & Peak Detection Testing
+        </h3>
+
+        <p>
+            A known signal was injected using a signal generator while
+            the amplifier and peak-detection outputs were monitored
+            through dedicated PCB test points using an oscilloscope.
         </p>
 
         <p>
-            Dedicated test points and BNC connections on the main PCB
-            allowed the signal to be probed at multiple stages of the
-            processing chain. The completed detector was subsequently
-            tested with the SiPM to capture actual detector pulses.
+            The amplifier response was evaluated for gain and noise
+            sensitivity. The peak detector was evaluated by observing
+            the detected peak, hold period, signal fall time, and output
+            response.
         </p>
 
 
-        <div class="project-two-column">
+        <div class="project-image-large">
 
-            <div>
-
-                <img
-                    src="../images/sipm/test-setup.jpg"
-                    alt="SiPM detector hardware test setup"
-                >
-
-            </div>
-
-
-            <div>
-
-                <img
-                    src="../images/sipm/oscilloscope.jpg"
-                    alt="Oscilloscope capture of SiPM detector signal"
-                >
-
-            </div>
+            <img
+                src="../images/sipm/test-setup.jpg"
+                alt="Hardware test setup for amplifier and peak detection validation"
+            >
 
         </div>
 
@@ -963,14 +983,14 @@
 
         <p>
             The project provided experience integrating analog signal
-            processing, high-voltage sensor biasing, embedded
-            acquisition, PCB design, and mechanical/system-level
-            modularity into a single detector platform.
+            processing, SiPM bias generation, embedded acquisition,
+            PCB design, assembly, and system-level modularity into a
+            complete detector platform.
         </p>
 
         <p>
-            The prototype also highlighted areas that could be improved
-            in a future revision. Additional analog filtering could be
+            The prototype also highlighted areas for improvement in a
+            future revision. Additional analog filtering could be
             introduced to improve noise rejection and signal
             conditioning.
         </p>
