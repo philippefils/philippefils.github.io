@@ -195,127 +195,121 @@
 
 <section class="project-section">
 
-    <div class="container project-content-wide">
+<div class="container project-content-wide">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <p class="eyebrow">
-                ANALOG SIGNAL PROCESSING
-            </p>
-
-            <h2>
-                SiPM signal conditioning
-            </h2>
-
-        </div>
-
-
-        <p>
-            Each channel uses a MICROFC-60035-SMT-TR SiPM operated at
-            approximately 29.5 V bias. The raw SiPM pulse is first amplified
-            using an OPA354 in a non-inverting configuration before entering
-            a dedicated peak-detection stage.
+        <p class="eyebrow">
+            ANALOG SIGNAL PROCESSING
         </p>
 
-        <p>
-            The peak detector uses two OPA354 amplifiers, a BSS138 NMOS
-            transistor, and a BAT54S Schottky diode. The circuit captures the
-            amplitude of short SiPM pulses and holds the detected peak long
-            enough for the ESP32 ADC to sample it.
-        </p>
-
-
-        <!-- Raw signal simulations -->
-
-        <div class="project-figure-grid">
-
-            <figure class="project-figure">
-
-                <img
-                    src="../images/sipm/ltspice-raw-signal-generator-circuit.png"
-                    alt="LTSpice circuit generating simulated SiPM pulses"
-                >
-
-                <figcaption>
-                    <strong>LTSpice pulse source</strong> —
-                    Representative SiPM pulses modeled at 6, 32, and 100 mV.
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="project-figure">
-
-                <img
-                    src="../images/sipm/sipm-raw-signals-sim.png"
-                    alt="Simulated raw SiPM signals"
-                >
-
-                <figcaption>
-                    <strong>Simulated SiPM pulses</strong> —
-                    Input waveforms used to evaluate the signal-processing chain.
-                </figcaption>
-
-            </figure>
-
-        </div>
-
-
-        <!-- Signal processing circuit -->
-
-        <figure class="project-figure project-figure-large">
-
-            <img
-                src="../images/sipm/ltspice-signal-processing-circuit.png"
-                alt="LTSpice signal processing circuit"
-            >
-
-            <figcaption>
-                <strong>Signal-processing circuit</strong> —
-                LTSpice model of the amplification and peak-detection stages
-                used to validate the analog architecture before PCB implementation.
-            </figcaption>
-
-        </figure>
-
-
-        <!-- Amplifier and peak detection -->
-
-        <div class="project-figure-grid">
-
-            <figure class="project-figure">
-
-                <img
-                    src="../images/sipm/sipm-amp-sim.png"
-                    alt="LTSpice amplifier simulation"
-                >
-
-                <figcaption>
-                    <strong>Amplifier simulation</strong> —
-                    Simulated amplification of the SiPM signal at approximately
-                    30 V/V gain.
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="project-figure">
-
-                <img
-                    src="../images/sipm/sipm-peak-detect-sim.png"
-                    alt="LTSpice peak detector simulation"
-                >
-
-                <figcaption>
-                    <strong>Peak-detector simulation</strong> —
-                    Simulated peak capture and hold behavior.
-                </figcaption>
-
-            </figure>
-
-        </div>
+        <h2>
+            SiPM signal conditioning
+        </h2>
 
     </div>
+
+
+    <p>
+        Each channel uses a MICROFC-60035-SMT-TR SiPM operated at
+        approximately 29.5 V bias. The raw SiPM pulse is first amplified
+        using an OPA354 in a non-inverting configuration before entering
+        a dedicated peak-detection stage.
+    </p>
+
+    <p>
+        The peak detector uses two OPA354 amplifiers, a BSS138 NMOS
+        transistor, and a BAT54S Schottky diode. The circuit captures the
+        amplitude of short SiPM pulses and holds the detected peak long
+        enough for the ESP32 ADC to sample it.
+    </p>
+
+
+    <!-- Raw signal simulations -->
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/sipm/ltspice-raw-signal-generator-circuit.png"
+            alt="LTSpice circuit generating simulated SiPM pulses"
+        >
+
+        <figcaption>
+            <strong>LTSpice pulse source</strong> —
+            Representative SiPM pulses modeled at 6, 32, and 100 mV.
+        </figcaption>
+
+    </figure>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/sipm/sipm-raw-signals-sim.png"
+            alt="Simulated raw SiPM signals"
+        >
+
+        <figcaption>
+            <strong>Simulated SiPM pulses</strong> —
+            Input waveforms used to evaluate the signal-processing chain.
+        </figcaption>
+
+    </figure>
+
+
+    <!-- Signal processing circuit -->
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/sipm/ltspice-signal-processing-circuit.png"
+            alt="LTSpice signal processing circuit"
+        >
+
+        <figcaption>
+            <strong>Signal-processing circuit</strong> —
+            LTSpice model of the amplification and peak-detection stages
+            used to validate the analog architecture before PCB implementation.
+        </figcaption>
+
+    </figure>
+
+
+    <!-- Amplifier simulation -->
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/sipm/sipm-amp-sim.png"
+            alt="LTSpice amplifier simulation"
+        >
+
+        <figcaption>
+            <strong>Amplifier simulation</strong> —
+            Simulated amplification of the SiPM signal at approximately
+            30 V/V gain.
+        </figcaption>
+
+    </figure>
+
+
+    <!-- Peak detection simulation -->
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/sipm/sipm-peak-detect-sim.png"
+            alt="LTSpice peak detector simulation"
+        >
+
+        <figcaption>
+            <strong>Peak-detector simulation</strong> —
+            Simulated peak capture and hold behavior.
+        </figcaption>
+
+    </figure>
+
+</div>
 
 </section>
 
@@ -556,7 +550,52 @@
 
 </section>
 
+<!-- ================= FUTURE IMPROVEMENTS ================= -->
 
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            FUTURE IMPROVEMENTS
+        </p>
+
+        <h2>
+            Potential next steps
+        </h2>
+
+    </div>
+
+
+    <p>
+        Future iterations of the detector could further improve the
+        signal-processing chain and overall system integration. The
+        analog front end could be refined to improve noise performance,
+        increase measurement consistency, and better accommodate the
+        characteristics of the SiPM output signal.
+    </p>
+
+    <p>
+        Additional hardware validation could also be performed using
+        calibrated radiation sources to characterize detector response,
+        repeatability, and channel-to-channel variation under realistic
+        operating conditions.
+    </p>
+
+    <p>
+        The modular architecture could be extended with additional
+        detector channels and a more integrated data-acquisition system,
+        allowing larger detector configurations to be assembled without
+        requiring a complete redesign of the electronics.
+    </p>
+
+</div>
+
+</section>
+
+    
 <!-- ================= PROJECT SUMMARY ================= -->
 
 <section class="project-section">
