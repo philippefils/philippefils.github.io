@@ -290,7 +290,7 @@ footer a {
 .project-hero-image-pair {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 18px;
+    gap: 30px;
 }
 
 
@@ -338,23 +338,24 @@ footer a {
 .project-figure {
     margin: 0;
 
-    background: white;
-    border: 1px solid #e0e3e7;
-    border-radius: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
 
-    overflow: hidden;
+    overflow: visible;
 }
 
 .project-figure img {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 6px;
 }
 
 .project-figure figcaption {
-    padding: 13px 18px 15px;
+    padding: 10px 0 0;
 
-    border-top: 1px solid #e0e3e7;
+    border: none;
 
     color: #626a73;
     font-size: 14px;
@@ -363,6 +364,23 @@ footer a {
 
 .project-figure figcaption strong {
     color: #171a1f;
+}
+
+
+/* =========================================================
+   PROJECT HERO / BOARD IMAGES
+   ========================================================= */
+
+/*
+   Keeps the Layout and Assembled Board images
+   visually similar in size.
+*/
+
+.project-hero-image-pair .project-figure img {
+    width: 100%;
+    height: 360px;
+    object-fit: contain;
+    background: white;
 }
 
 
@@ -376,6 +394,27 @@ footer a {
 
 .project-figure-large img {
     width: 100%;
+}
+
+
+/* =========================================================
+   STACKED MODULAR CROSS-SECTION
+   ========================================================= */
+
+/*
+   The cross-section image should not dominate the page.
+   It remains centered and substantially smaller than
+   the main board images.
+*/
+
+.project-figure-modular {
+    max-width: 650px;
+    margin: 40px auto 0;
+}
+
+.project-figure-modular img {
+    width: 100%;
+    height: auto;
 }
 
 
@@ -480,6 +519,12 @@ footer a {
 
     .project-hero-image-pair {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-hero-image-pair .project-figure img {
+        height: auto;
+        max-height: 360px;
     }
 
     .project-section {
@@ -497,6 +542,11 @@ footer a {
     .project-figure-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .project-figure-modular {
+        max-width: 100%;
+        margin-top: 30px;
     }
 
     .project-highlight {
