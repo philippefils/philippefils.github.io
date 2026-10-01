@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Custom ESP32-S3 MP3 Player</title> <link rel="stylesheet" href="../style.css"> </head>
+
+<body>
+
+<!-- PROJECT HEADER -->
+<header class="project-header">
+    <div class="container">
+
+        <a href="../index.html" class="back-link">← Back to Projects</a>
+
+        <p class="eyebrow">EMBEDDED SYSTEMS / PCB DESIGN</p>
+
+        <h1>Custom ESP32-S3 MP3 Player</h1>
+
+        <p class="project-subtitle">
+            Custom embedded audio player designed around an ESP32-S3,
+            rechargeable LiPo power system, microSD storage, and a dedicated
+            headphone audio chain.
+        </p>
+
+        <div class="tags">
+            <span>Embedded Systems</span>
+            <span>PCB Design</span>
+            <span>Audio</span>
+            <span>Power Electronics</span>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- PROJECT HERO IMAGES -->
+<section class="project-hero-image-section">
+    <div class="container">
+
+        <div class="project-hero-image-pair">
+
+            <figure class="project-figure">
+                <img src="../images/mp3/main-pcb-layout.png"
+                     alt="MP3 player PCB layout">
+                <figcaption>
+                    <strong>PCB Layout</strong> — Four-layer PCB integrating
+                    the ESP32-S3, audio circuitry, power management, storage,
+                    display, and user interfaces.
+                </figcaption>
+            </figure>
+
+            <figure class="project-figure">
+                <img src="../images/mp3/assembled-pcb.jpg"
+                     alt="Assembled MP3 player PCB">
+                <figcaption>
+                    <strong>Assembled Board</strong> — Custom MP3 player
+                    hardware assembled and prepared for bring-up and testing.
+                </figcaption>
+            </figure>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- OVERVIEW -->
+<section class="project-section">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">OVERVIEW</p>
+
+        <h2>Custom Portable Audio Platform</h2>
+
+        <p>
+            This project is a custom MP3 player built around the ESP32-S3-WROOM-1-N16R8.
+            The system is designed to play WAV audio files stored on a microSD card,
+            provide headphone output through a dedicated audio signal chain, and operate
+            from a rechargeable single-cell LiPo battery.
+        </p>
+
+        <p>
+            The board integrates USB-C connectivity for charging and data transfer,
+            battery monitoring, a character display, physical controls, a volume
+            potentiometer, and dedicated audio and power circuitry into a single
+            custom PCB.
+        </p>
+
+        <p>
+            My work focused on the electrical hardware design, including schematic
+            capture, component selection, power architecture, audio signal-chain
+            design, PCB layout, interface design, assembly, and hardware bring-up.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- SYSTEM ARCHITECTURE -->
+<section class="project-section project-section-alt">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">SYSTEM ARCHITECTURE</p>
+
+        <h2>Embedded Audio Architecture</h2>
+
+        <p>
+            The ESP32-S3 acts as the central controller, coordinating audio playback,
+            user input, display control, storage, and power-related functions.
+            Audio files are read from the microSD card and streamed through the
+            ESP32-S3's I²S interface to the external DAC.
+        </p>
+
+        <figure class="project-figure project-figure-large project-figure-medium">
+            <img src="../images/mp3/system-architecture.png"
+                 alt="MP3 player system architecture">
+            <figcaption>
+                <strong>System architecture</strong> — The ESP32-S3 connects
+                the storage, user interface, display, power system, and
+                dedicated audio signal chain.
+            </figcaption>
+        </figure>
+
+        <p>
+            The resulting analog audio signal is passed from the DAC to the
+            headphone amplifier before reaching the 3.5 mm audio jack.
+            The digital and analog portions of the design were treated as
+            separate functional areas to reduce unwanted coupling into the
+            audio path.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- AUDIO SYSTEM -->
+<section class="project-section">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">AUDIO SYSTEM</p>
+
+        <h2>Digital-to-Analog Audio Chain</h2>
+
+        <p>
+            Audio playback begins with WAV files stored on the microSD card.
+            The ESP32-S3 reads the audio data over SPI and sends the digital
+            audio stream to an external DAC through I²S.
+        </p>
+
+        <p>
+            The DAC converts the digital audio into an analog signal, which is
+            then passed through a dedicated headphone amplifier before being
+            routed to the 3.5 mm audio output.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img src="../images/mp3/audio-chain.png"
+                 alt="MP3 player audio signal chain">
+            <figcaption>
+                <strong>Audio signal chain</strong> — microSD storage,
+                ESP32-S3 I²S interface, DAC, headphone amplifier, and
+                3.5 mm audio output.
+            </figcaption>
+        </figure>
+
+        <p>
+            The audio section also includes dedicated analog power filtering
+            and local decoupling to limit digital switching noise from coupling
+            into the sensitive analog circuitry.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- POWER DESIGN -->
+<section class="project-section project-section-alt">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">POWER DESIGN</p>
+
+        <h2>Rechargeable Battery Power System</h2>
+
+        <p>
+            The power system is built around a single-cell LiPo battery and
+            USB-C input. The charging stage provides the battery charging
+            function while supporting system power during operation.
+        </p>
+
+        <p>
+            A buck-boost regulator generates the main 3.3 V rail used by the
+            ESP32-S3 and other low-voltage circuitry. A separate filtered
+            analog supply is used for the audio circuitry to reduce the impact
+            of digital switching noise.
+        </p>
+
+        <p>
+            Battery monitoring is also integrated into the design so that the
+            remaining battery level can be measured by the ESP32-S3.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img src="../images/mp3/power-architecture.png"
+                 alt="MP3 player power architecture">
+            <figcaption>
+                <strong>Power architecture</strong> — USB-C input,
+                LiPo charging, battery power, 3.3 V regulation, and
+                filtered analog power distribution.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+
+<!-- USER INTERFACE -->
+<section class="project-section">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">USER INTERFACE</p>
+
+        <h2>Physical Controls and Display</h2>
+
+        <p>
+            The player uses physical buttons for playback and navigation,
+            along with a dedicated character display for presenting playback
+            and system information.
+        </p>
+
+        <p>
+            A Bourns 3352T-1-103LF thumbwheel potentiometer provides hardware
+            volume control. The potentiometer is read by the ESP32-S3 ADC,
+            with software smoothing applied to reduce small variations in
+            the measured value.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img src="../images/mp3/user-interface.png"
+                 alt="MP3 player user interface hardware">
+            <figcaption>
+                <strong>User interface</strong> — Display, physical buttons,
+                and thumbwheel volume control integrated directly onto the PCB.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+
+<!-- PCB DESIGN -->
+<section class="project-section project-section-alt">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">PCB DESIGN</p>
+
+        <h2>Four-Layer PCB Layout</h2>
+
+        <p>
+            The PCB was designed in Altium Designer as a four-layer board,
+            allowing the digital, analog, power, and ground regions to be
+            organized while maintaining controlled return paths.
+        </p>
+
+        <p>
+            The ESP32-S3, microSD interface, USB-C circuitry, display,
+            buttons, and power electronics were placed to keep high-speed
+            digital and switching-current paths away from the sensitive
+            analog audio circuitry.
+        </p>
+
+        <p>
+            The audio DAC and headphone amplifier were grouped within the
+            analog section of the board, with dedicated power filtering and
+            local decoupling placed close to the relevant devices.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img src="../images/mp3/pcb-layout.png"
+                 alt="MP3 player four-layer PCB layout">
+            <figcaption>
+                <strong>PCB layout</strong> — Component placement and routing
+                organized around functional power, digital, and analog regions.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+
+<!-- HARDWARE VALIDATION -->
+<section class="project-section">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">HARDWARE VALIDATION</p>
+
+        <h2>Bring-Up and Hardware Testing</h2>
+
+        <p>
+            Hardware bring-up was performed progressively, beginning with
+            power and charging circuitry before integrating the ESP32-S3
+            and peripheral interfaces.
+        </p>
+
+        <p>
+            Individual power rails were checked for expected voltage levels
+            and shorts before connecting downstream circuitry. Peripheral
+            interfaces and control signals were then verified during system
+            integration.
+        </p>
+
+        <p>
+            The audio path was tested independently to verify signal transfer
+            through the DAC and headphone amplifier before full system
+            integration.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img src="../images/mp3/hardware-validation.jpg"
+                 alt="MP3 player hardware validation setup">
+            <figcaption>
+                <strong>Hardware validation</strong> — Progressive bring-up
+                and electrical testing of the custom MP3 player hardware.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+
+<!-- FUTURE IMPROVEMENTS -->
+<section class="project-section project-section-alt">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">FUTURE IMPROVEMENTS</p>
+
+        <h2>Future Development</h2>
+
+        <p>
+            Future revisions could further refine the audio power distribution
+            and grounding strategy to reduce noise coupling between the digital
+            and analog sections.
+        </p>
+
+        <p>
+            Additional hardware and firmware features could also expand the
+            player with improved playback controls, additional audio formats,
+            and more advanced battery and system monitoring.
+        </p>
+
+        <p>
+            The modular interface approach also provides opportunities to
+            replace or expand individual peripherals without redesigning the
+            entire system.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- KEY TECHNOLOGIES -->
+<section class="project-section">
+    <div class="container project-content-wide">
+
+        <p class="eyebrow">KEY TECHNOLOGIES</p>
+
+        <div class="tags">
+            <span>Altium Designer</span>
+            <span>ESP32-S3</span>
+            <span>USB-C</span>
+            <span>LiPo Battery</span>
+            <span>SPI</span>
+            <span>I²S</span>
+            <span>DAC</span>
+            <span>Audio Electronics</span>
+            <span>PCB Design</span>
+            <span>Embedded Systems</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <p>© 2026 Philippe Fils</p>
+
+        <div>
+            <a href="../index.html">Projects</a>
+            <a href="https://www.linkedin.com/">LinkedIn</a>
+            <a href="mailto:your-email@example.com">Email</a>
+        </div>
+
+    </div>
+</footer>
+
+</body> </html>
