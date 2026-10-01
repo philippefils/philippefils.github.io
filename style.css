@@ -178,6 +178,7 @@ body {
     font-weight: 600;
 }
 
+.project-header .tags span { color: #171a1f; }
 
 /* =========================================================
    ABOUT
