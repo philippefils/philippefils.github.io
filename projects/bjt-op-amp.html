@@ -1,1 +1,602 @@
+<!DOCTYPE html>
 
+<html lang="en">
+
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BJT-Based Operational Amplifier | Philippe Olivier Fils</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<!-- ================= PROJECT HEADER ================= -->
+
+<header class="project-header">
+
+<div class="container">
+
+    <a href="../index.html" class="back-link">
+        ← Back to Projects
+    </a>
+
+    <p class="eyebrow">
+        ANALOG CIRCUIT DESIGN
+    </p>
+
+    <h1>
+        BJT-Based Operational Amplifier
+    </h1>
+
+    <p class="project-subtitle">
+        Discrete operational amplifier designed, simulated, and validated
+        using multiple BJT amplifier stages to study gain, frequency
+        response, and output-stage behavior.
+    </p>
+
+    <div class="tags">
+        <span>Analog Design</span>
+        <span>BJT</span>
+        <span>LTSpice</span>
+        <span>Amplifiers</span>
+    </div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO IMAGES ================= -->
+
+<section class="project-hero-image-section">
+
+<div class="container">
+
+    <div class="project-hero-image-pair">
+
+        <figure class="project-figure">
+
+            <div class="project-hero-image">
+                <img
+                    src="../images/bjt-op-amp/differential-stage.png"
+                    alt="BJT differential amplifier stage"
+                >
+            </div>
+
+            <figcaption>
+                <strong>Differential input stage</strong> —
+                BJT differential amplifier forming the input stage
+                of the discrete operational amplifier.
+            </figcaption>
+
+        </figure>
+
+
+        <figure class="project-figure">
+
+            <div class="project-hero-image">
+                <img
+                    src="../images/bjt-op-amp/class-ab-output.png"
+                    alt="Class AB output stage of the BJT operational amplifier"
+                >
+            </div>
+
+            <figcaption>
+                <strong>Class AB output stage</strong> —
+                Push-pull output stage used to provide the final
+                amplifier output.
+            </figcaption>
+
+        </figure>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= OVERVIEW ================= -->
+
+<main>
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            PROJECT OVERVIEW
+        </p>
+
+        <h2>
+            Designing a discrete operational amplifier
+        </h2>
+
+    </div>
+
+
+    <p>
+        This project involved the design, simulation, and validation of
+        a general-purpose operational amplifier built entirely from
+        commercially available bipolar junction transistors.
+    </p>
+
+    <p>
+        The design was developed as a multi-stage amplifier to study
+        the behavior of different transistor amplifier configurations
+        and their combined effect on gain, frequency response, and
+        output drive capability.
+    </p>
+
+    <p>
+        The target open-loop gain was approximately 2500 V/V. The
+        completed design consisted of three primary amplifier stages:
+        a differential input stage, a buffer stage driving a common-
+        emitter amplifier, and a Class AB output stage.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= OP-AMP ARCHITECTURE ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            OP-AMP ARCHITECTURE
+        </p>
+
+        <h2>
+            Three-stage discrete amplifier
+        </h2>
+
+    </div>
+
+
+    <p>
+        The operational amplifier was divided into three functional
+        stages, with each stage serving a specific role in the overall
+        signal chain.
+    </p>
+
+
+    <div class="project-feature-grid">
+
+        <div>
+
+            <h3>
+                01 — Differential Amplifier
+            </h3>
+
+            <p>
+                The input stage converts the differential input voltage
+                into a corresponding transistor current difference,
+                providing the foundation for the amplifier's voltage gain.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                02 — Buffer &amp; Common-Emitter Stage
+            </h3>
+
+            <p>
+                A buffer stage using diode-connected transistors drives
+                the common-emitter amplifier, providing additional
+                voltage gain while interfacing between the input and
+                output sections.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                03 — Class AB Output Stage
+            </h3>
+
+            <p>
+                The Class AB output stage provides the final output
+                drive capability while reducing crossover distortion
+                compared with a simple Class B configuration.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= DIFFERENTIAL STAGE ================= -->
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            STAGE 01
+        </p>
+
+        <h2>
+            Differential amplifier
+        </h2>
+
+    </div>
+
+
+    <p>
+        The first stage of the operational amplifier is a BJT
+        differential amplifier. This stage responds to the difference
+        between the two input signals and establishes the input
+        behavior of the overall amplifier.
+    </p>
+
+    <p>
+        The differential stage was analyzed and simulated to determine
+        its operating point and contribution to the overall voltage gain.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/bjt-op-amp/differential-stage.png"
+            alt="BJT differential amplifier stage schematic"
+        >
+
+        <figcaption>
+            <strong>Figure 5 — Differential amplifier stage</strong> —
+            BJT differential input stage used as the first stage
+            of the operational amplifier.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= BUFFER / CE STAGE ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            STAGE 02
+        </p>
+
+        <h2>
+            Buffer and common-emitter amplifier
+        </h2>
+
+    </div>
+
+
+    <p>
+        The second stage combines a buffer formed using diode-connected
+        transistors with a common-emitter amplifier. The buffer provides
+        an interface between the preceding differential stage and the
+        high-gain common-emitter stage.
+    </p>
+
+    <p>
+        The common-emitter amplifier provides a significant portion of
+        the voltage gain required to reach the overall open-loop gain
+        target.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/bjt-op-amp/buffer-ce-stage.png"
+            alt="Buffer and common-emitter amplifier stage"
+        >
+
+        <figcaption>
+            <strong>Figure 6 — Buffer and common-emitter stage</strong> —
+            Diode-connected transistor buffer driving the common-emitter
+            amplifier stage.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= CLASS AB ================= -->
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            STAGE 03
+        </p>
+
+        <h2>
+            Class AB output stage
+        </h2>
+
+    </div>
+
+
+    <p>
+        The final stage uses a Class AB output configuration to provide
+        the required output drive capability. The stage was designed to
+        operate with reduced crossover distortion while maintaining the
+        ability to source and sink output current.
+    </p>
+
+    <p>
+        The output stage was analyzed both independently and as part of
+        the complete amplifier to evaluate its effect on the final
+        signal response.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/bjt-op-amp/class-ab-output.png"
+            alt="BJT Class AB output stage"
+        >
+
+        <figcaption>
+            <strong>Figure 7 — Class AB output stage</strong> —
+            Push-pull BJT output stage used to drive the amplifier output.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= LTSPICE ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            SIMULATION
+        </p>
+
+        <h2>
+            LTSpice analysis
+        </h2>
+
+    </div>
+
+
+    <p>
+        LTSpice was used throughout the design process to evaluate the
+        individual amplifier stages and the complete operational
+        amplifier before hardware implementation.
+    </p>
+
+    <p>
+        Simulation was used to analyze voltage gain, operating points,
+        frequency response, and the interaction between the different
+        amplifier stages.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/bjt-op-amp/ltspice-op-amp.png"
+            alt="Complete BJT operational amplifier LTSpice simulation"
+        >
+
+        <figcaption>
+            <strong>LTSpice simulation</strong> —
+            Simulation of the complete discrete operational amplifier.
+        </figcaption>
+
+    </figure>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/bjt-op-amp/frequency-response.png"
+            alt="BJT operational amplifier frequency response simulation"
+        >
+
+        <figcaption>
+            <strong>Frequency response</strong> —
+            Simulated frequency characteristics used to evaluate
+            amplifier performance.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= HARDWARE VALIDATION ================= -->
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            HARDWARE VALIDATION
+        </p>
+
+        <h2>
+            From simulation to physical prototype
+        </h2>
+
+    </div>
+
+
+    <p>
+        After simulation, the amplifier was assembled using commercially
+        available BJT transistors and discrete components. The physical
+        prototype was tested to compare the measured behavior with the
+        simulated design.
+    </p>
+
+    <p>
+        A multimeter, oscilloscope, and signal generator were used to
+        verify circuit operation, measure signal behavior, and evaluate
+        the amplifier response.
+    </p>
+
+    <p>
+        The hardware testing process provided practical insight into
+        transistor operating points, amplifier-stage interactions,
+        feedback behavior, and differences between simulated and
+        physical circuit performance.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/bjt-op-amp/prototype-testing.png"
+            alt="Physical BJT operational amplifier prototype during testing"
+        >
+
+        <figcaption>
+            <strong>Hardware validation</strong> —
+            Discrete BJT amplifier prototype tested using laboratory
+            measurement equipment.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= FUTURE IMPROVEMENTS ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            FUTURE IMPROVEMENTS
+        </p>
+
+        <h2>
+            Future improvements
+        </h2>
+
+    </div>
+
+
+    <p>
+        Future iterations could further optimize the amplifier for
+        gain-bandwidth performance, stability, output drive capability,
+        and reduced distortion.
+    </p>
+
+    <p>
+        Additional analysis of compensation and closed-loop behavior
+        could also be used to characterize the operational amplifier
+        under a wider range of practical operating conditions.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= KEY TECHNOLOGIES ================= -->
+
+<section class="project-section">
+
+<div class="container">
+
+    <div class="project-summary">
+
+        <p class="eyebrow">
+            KEY TECHNOLOGIES
+        </p>
+
+        <div class="tags">
+            <span>Analog Circuit Design</span>
+            <span>BJT</span>
+            <span>LTSpice</span>
+            <span>Differential Amplifiers</span>
+            <span>Common-Emitter Amplifiers</span>
+            <span>Class AB</span>
+            <span>Frequency Response</span>
+            <span>Oscilloscope</span>
+            <span>Signal Generator</span>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+    <p>
+        Philippe Olivier Fils
+    </p>
+
+    <div>
+
+        <a href="../index.html">
+            Projects
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/philippeolivierfils"
+            target="_blank"
+        >
+            LinkedIn
+        </a>
+
+        <a href="mailto:philippe.fils@mail.mcgill.ca">
+            Email
+        </a>
+
+    </div>
+
+</div>
+
+</footer>
+
+</body> </html>
