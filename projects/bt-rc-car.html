@@ -1,1 +1,392 @@
+<!DOCTYPE html>
 
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bluetooth RC Car | Philippe Olivier Fils</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     PROJECT HEADER
+     ========================================================= -->
+
+<header class="project-header">
+    <div class="container">
+
+        <a href="../index.html" class="back-link">
+            ← Back to Projects
+        </a>
+
+        <p class="eyebrow">EMBEDDED SYSTEMS & BLUETOOTH</p>
+
+        <h1>Bluetooth RC Car</h1>
+
+        <p class="project-subtitle">
+            Upgrade of an obstacle avoidance robot with Bluetooth control
+            and a custom handheld controller.
+        </p>
+
+        <div class="tags">
+            <span>Bluetooth</span>
+            <span>Arduino</span>
+            <span>Embedded Systems</span>
+            <span>C++</span>
+            <span>Serial Communication</span>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================================================
+     HERO IMAGES
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <div class="project-gallery">
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/bt-rc-car/robot-car.jpg"
+                    alt="Bluetooth controlled robot car"
+                >
+                <figcaption>
+                    Robot car upgraded with Bluetooth control.
+                </figcaption>
+            </figure>
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/bt-rc-car/controller.jpg"
+                    alt="Custom Bluetooth controller for the robot car"
+                >
+                <figcaption>
+                    Custom handheld controller with joystick and pushbuttons.
+                </figcaption>
+            </figure>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     OVERVIEW
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">OVERVIEW</p>
+
+        <h2>From autonomous robot to Bluetooth-controlled vehicle.</h2>
+
+        <p>
+            This project upgraded an existing obstacle avoidance robot into
+            a remotely controlled vehicle using Bluetooth communication.
+        </p>
+
+        <p>
+            A new operating mode was added to the robot, allowing the user
+            to control its movement remotely while retaining the existing
+            robot functionality.
+        </p>
+
+        <p>
+            The project included both the modification of the robot itself
+            and the development of a custom handheld controller with a
+            joystick and pushbuttons for movement and mode selection.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     SYSTEM ARCHITECTURE
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">SYSTEM ARCHITECTURE</p>
+
+        <h2>Two embedded systems connected wirelessly.</h2>
+
+        <p>
+            The system consists of a Bluetooth-enabled robot and a dedicated
+            handheld controller. The controller sends commands wirelessly
+            to the robot, which interprets the received serial data and
+            controls the vehicle accordingly.
+        </p>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <h3>Robot</h3>
+
+                <p>
+                    An HC-05 Bluetooth module configured as the master was
+                    integrated into the robot to provide wireless serial
+                    communication with the controller.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Controller</h3>
+
+                <p>
+                    An Arduino Nano-based controller uses a joystick and
+                    pushbuttons to generate movement and operating-mode
+                    commands.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     BLUETOOTH COMMUNICATION
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">BLUETOOTH COMMUNICATION</p>
+
+        <h2>Wireless serial communication.</h2>
+
+        <p>
+            Bluetooth communication was implemented using HC-05 modules.
+            The Bluetooth interface provided a serial communication link
+            between the handheld controller and the robot.
+        </p>
+
+        <p>
+            Controller inputs were translated into commands and transmitted
+            to the robot. The robot then processed the received information
+            to determine the requested movement or operating mode.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     CONTROLLER
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">CUSTOM CONTROLLER</p>
+
+        <h2>Joystick and pushbutton interface.</h2>
+
+        <p>
+            A custom remote controller was developed around an Arduino Nano.
+            A joystick provides directional control while pushbuttons are
+            used for additional commands and operating-mode selection.
+        </p>
+
+        <p>
+            The controller firmware was written in C++ and was responsible
+            for reading the user inputs, interpreting the requested action,
+            and transmitting the corresponding commands over the Bluetooth
+            link.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img
+                src="../images/bt-rc-car/controller.jpg"
+                alt="Custom Arduino Nano Bluetooth controller"
+            >
+            <figcaption>
+                Arduino Nano-based controller with joystick and pushbuttons.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     ROBOT MODIFICATION
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">ROBOT MODIFICATION</p>
+
+        <h2>Adding a new operating mode.</h2>
+
+        <p>
+            The existing obstacle avoidance robot was modified to support
+            Bluetooth-controlled operation. The new mode allows commands
+            received from the remote controller to control the robot's
+            movement.
+        </p>
+
+        <p>
+            This required integrating the Bluetooth communication layer
+            with the existing embedded control software and adapting the
+            robot's operating logic to respond to remote commands.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img
+                src="../images/bt-rc-car/robot-car.jpg"
+                alt="Modified obstacle avoidance robot with Bluetooth control"
+            >
+            <figcaption>
+                Robot platform modified to support Bluetooth-controlled operation.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     SOFTWARE
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">EMBEDDED SOFTWARE</p>
+
+        <h2>Firmware for the controller and robot.</h2>
+
+        <p>
+            The project involved embedded C++ development for both the
+            controller and Bluetooth communication system.
+        </p>
+
+        <p>
+            Development was performed using the Arduino IDE and PlatformIO
+            within Visual Studio Code. The firmware handled input
+            acquisition, Bluetooth serial communication, command processing,
+            and robot control.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PROTOTYPING
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">PROTOTYPING</p>
+
+        <h2>Rapid embedded hardware development.</h2>
+
+        <p>
+            The controller was developed through breadboard prototyping and
+            hand soldering. This allowed the input hardware, Arduino Nano,
+            and Bluetooth communication interface to be integrated and
+            tested before being used as a complete remote-control system.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FUTURE IMPROVEMENTS
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">FUTURE IMPROVEMENTS</p>
+
+        <h2>Potential extensions.</h2>
+
+        <ul class="project-list">
+            <li>Design a dedicated PCB for the handheld controller.</li>
+            <li>Improve the mechanical enclosure and ergonomics of the controller.</li>
+            <li>Add additional control modes and user inputs.</li>
+            <li>Improve command handling and communication feedback.</li>
+            <li>Expand the robot with additional sensors and autonomous behaviours.</li>
+        </ul>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     KEY TECHNOLOGIES
+     ========================================================= -->
+
+<section class="project-section project-technologies">
+    <div class="container">
+
+        <p class="eyebrow">KEY TECHNOLOGIES</p>
+
+        <div class="tags">
+            <span>Arduino Nano</span>
+            <span>HC-05 Bluetooth</span>
+            <span>C++</span>
+            <span>Embedded Systems</span>
+            <span>Serial Communication</span>
+            <span>Arduino IDE</span>
+            <span>PlatformIO</span>
+            <span>VS Code</span>
+            <span>Breadboard Prototyping</span>
+            <span>Hand Soldering</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                <strong>Philippe Olivier Fils</strong>
+                <p>Electrical Engineering & Hardware Design</p>
+            </div>
+
+            <div class="footer-links">
+                <a
+                    href="https://www.linkedin.com/in/philippeolivierfils"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+                <a href="mailto:philippe.fils@mail.mcgill.ca">
+                    Email
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+</body> </html>
