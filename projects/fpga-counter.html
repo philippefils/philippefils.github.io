@@ -1,1 +1,389 @@
+<!DOCTYPE html>
 
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FPGA Binary Sequence Counter | Philippe Olivier Fils</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     PROJECT HEADER
+     ========================================================= -->
+
+<header class="project-header">
+    <div class="container">
+
+        <a href="../index.html" class="back-link">
+            ← Back to Projects
+        </a>
+
+        <p class="eyebrow">FPGA & DIGITAL DESIGN</p>
+
+        <h1>FPGA Binary Sequence Counter</h1>
+
+        <p class="project-subtitle">
+            VHDL implementation of Moore finite state machines for detecting
+            binary sequences and counting their occurrences on an FPGA.
+        </p>
+
+        <div class="tags">
+            <span>FPGA</span>
+            <span>VHDL</span>
+            <span>FSM</span>
+            <span>Quartus</span>
+            <span>Digital Design</span>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================================================
+     HERO IMAGES
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <div class="project-gallery">
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/fpga-counter/fsm-sequence-0010.png"
+                    alt="Moore FSM for detecting the 0010 binary sequence"
+                >
+                <figcaption>
+                    Moore finite state machine used to detect the 0010 sequence.
+                </figcaption>
+            </figure>
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/fpga-counter/fsm-sequence-1011.png"
+                    alt="Moore FSM for detecting the 1011 binary sequence"
+                >
+                <figcaption>
+                    Moore finite state machine used to detect the 1011 sequence.
+                </figcaption>
+            </figure>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     OVERVIEW
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">OVERVIEW</p>
+
+        <h2>Detecting and counting binary sequences.</h2>
+
+        <p>
+            This project focused on designing a digital system capable of
+            detecting specific binary patterns within an incoming bit stream
+            and counting the number of times each pattern occurred.
+        </p>
+
+        <p>
+            Two independent sequence detectors were implemented using Moore-type
+            finite state machines. One detector identified the
+            <strong>0010</strong> sequence, while the other identified the
+            <strong>1011</strong> sequence.
+        </p>
+
+        <p>
+            Each detector generated a logic output when its corresponding
+            sequence was detected. These outputs were then used to enable
+            dedicated counters that tracked the number of detected occurrences.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     SYSTEM ARCHITECTURE
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">SYSTEM ARCHITECTURE</p>
+
+        <h2>Sequence detection and counting.</h2>
+
+        <p>
+            The system was divided into two main functional stages:
+            sequence detection and sequence counting.
+        </p>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <h3>Sequence Detectors</h3>
+
+                <p>
+                    Two Moore finite state machines monitored the incoming
+                    binary stream and generated a high output whenever their
+                    respective sequence was detected.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Sequence Counters</h3>
+
+                <p>
+                    Each detector output enabled a dedicated 3-bit up counter.
+                    The counter incremented when its associated sequence was
+                    detected.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FSM DESIGN
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">FINITE STATE MACHINES</p>
+
+        <h2>Moore-type sequence detectors.</h2>
+
+        <p>
+            The sequence detectors were implemented as Moore finite state
+            machines, where the output depends on the current state of the
+            machine.
+        </p>
+
+        <p>
+            Separate state machines were developed for the two target
+            sequences. Each state represents the portion of the target
+            sequence that has been recognized so far.
+        </p>
+
+        <div class="project-gallery">
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/fpga-counter/fsm-sequence-0010.png"
+                    alt="FSM and Boolean equation for the 0010 sequence detector"
+                >
+                <figcaption>
+                    FSM and Boolean equation for the 0010 sequence detector.
+                </figcaption>
+            </figure>
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/fpga-counter/fsm-sequence-1011.png"
+                    alt="FSM and Boolean equation for the 1011 sequence detector"
+                >
+                <figcaption>
+                    FSM and Boolean equation for the 1011 sequence detector.
+                </figcaption>
+            </figure>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     VHDL / QUARTUS IMPLEMENTATION
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">FPGA IMPLEMENTATION</p>
+
+        <h2>VHDL implementation in Quartus.</h2>
+
+        <p>
+            The finite state machines and sequence counters were implemented
+            in VHDL using the Quartus development environment.
+        </p>
+
+        <p>
+            The sequence detector logic was translated into synthesizable
+            VHDL and implemented on an Altera DE1-SoC FPGA development board.
+            Timing analysis was also performed as part of the digital design
+            process.
+        </p>
+
+        <div class="project-gallery">
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/fpga-counter/quartus-sequence-detectors.png"
+                    alt="Quartus implementation of the sequence detector FSMs"
+                >
+                <figcaption>
+                    Quartus implementation of the two sequence detector FSMs.
+                </figcaption>
+            </figure>
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/fpga-counter/quartus-sequence-counters.png"
+                    alt="Quartus implementation of the sequence counters"
+                >
+                <figcaption>
+                    Quartus implementation of the sequence counters.
+                </figcaption>
+            </figure>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     COUNTER DESIGN
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">COUNTER DESIGN</p>
+
+        <h2>Tracking detected sequences.</h2>
+
+        <p>
+            The outputs of the two sequence detectors were connected to
+            separate 3-bit up counters. Each counter was enabled by the
+            output of its corresponding detector.
+        </p>
+
+        <p>
+            When the detector recognized its target sequence, its output
+            enabled the associated counter, incrementing the stored count.
+            This allowed the system to independently track occurrences of
+            both binary patterns.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     HARDWARE IMPLEMENTATION
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">HARDWARE</p>
+
+        <h2>Implementation on an FPGA development board.</h2>
+
+        <p>
+            The completed VHDL design was implemented on an Altera DE1-SoC
+            FPGA development board. The project provided practical experience
+            translating finite state machine logic into synthesizable hardware
+            and validating the resulting digital system.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FUTURE IMPROVEMENTS
+     ========================================================= -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">FUTURE IMPROVEMENTS</p>
+
+        <h2>Potential extensions.</h2>
+
+        <ul class="project-list">
+            <li>Expand the system to detect additional binary sequences.</li>
+            <li>Increase the counter width for longer counting ranges.</li>
+            <li>Add configurable sequence inputs rather than fixed patterns.</li>
+            <li>Provide a user interface for displaying detected sequence counts.</li>
+            <li>Extend the design with additional FPGA-based digital processing.</li>
+        </ul>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     KEY TECHNOLOGIES
+     ========================================================= -->
+
+<section class="project-section project-technologies">
+    <div class="container">
+
+        <p class="eyebrow">KEY TECHNOLOGIES</p>
+
+        <div class="tags">
+            <span>VHDL</span>
+            <span>FPGA</span>
+            <span>Quartus</span>
+            <span>Finite State Machines</span>
+            <span>Digital Logic</span>
+            <span>Timing Analysis</span>
+            <span>Altera DE1-SoC</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                <strong>Philippe Olivier Fils</strong>
+                <p>Electrical Engineering & Hardware Design</p>
+            </div>
+
+            <div class="footer-links">
+                <a
+                    href="https://www.linkedin.com/in/philippeolivierfils"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+                <a href="mailto:philippe.fils@mail.mcgill.ca">
+                    Email
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+</body> </html>
