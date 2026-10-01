@@ -1,1 +1,524 @@
+<!DOCTYPE html>
 
+<html lang="en">
+
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Robotic Manipulator Controller | Philippe Olivier Fils</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<!-- ================= PROJECT HEADER ================= -->
+
+<header class="project-header">
+
+<div class="container">
+
+    <a href="../index.html" class="back-link">
+        ← Back to Projects
+    </a>
+
+    <p class="eyebrow">
+        ROBOTICS & CONTROL
+    </p>
+
+    <h1>
+        Dynamic Controller for a Robotic Manipulator Arm
+    </h1>
+
+    <p class="project-subtitle">
+        Dynamically controlled inverse-dynamic system developed in ROS
+        and Gazebo with joint-space, task-space, stiffness, and damping control.
+    </p>
+
+    <div class="tags">
+        <span>ROS</span>
+        <span>Gazebo</span>
+        <span>Control Systems</span>
+        <span>Robotics</span>
+    </div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO IMAGES ================= -->
+
+<section class="project-hero-image-section">
+
+<div class="container">
+
+    <div class="project-hero-image-pair">
+
+        <figure class="project-figure">
+
+            <div class="project-hero-image">
+                <img
+                    src="../images/robotic-controller/ros-nodes.png"
+                    alt="ROS nodes running for the robotic manipulator controller"
+                >
+            </div>
+
+            <figcaption>
+                <strong>ROS control architecture</strong> —
+                Multiple ROS nodes used to implement and communicate
+                with the dynamic controller.
+            </figcaption>
+
+        </figure>
+
+
+        <figure class="project-figure">
+
+            <div class="project-hero-image">
+                <img
+                    src="../images/robotic-controller/gazebo-simulation.png"
+                    alt="Robotic manipulator simulation in Gazebo"
+                >
+            </div>
+
+            <figcaption>
+                <strong>Robotic simulation environment</strong> —
+                Gazebo simulation used to develop and test the controller.
+            </figcaption>
+
+        </figure>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= OVERVIEW ================= -->
+
+<main>
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            PROJECT OVERVIEW
+        </p>
+
+        <h2>
+            Dynamic control of a robotic manipulator
+        </h2>
+
+    </div>
+
+
+    <p>
+        The objective of this project was to implement and test a
+        dynamically controlled inverse-dynamic system for a robotic
+        manipulator. The controller was developed to operate in both
+        joint-space and task-space while allowing the dynamic behavior
+        of the robot to be adjusted through stiffness and damping parameters.
+    </p>
+
+    <p>
+        The system was developed using ROS and Gazebo, allowing the
+        controller to interact with a simulated robotic manipulator
+        while providing a framework for testing different control
+        configurations and operating conditions.
+    </p>
+
+    <p>
+        The controller was evaluated by commanding the manipulator to
+        reach defined positions, applying external perturbations, and
+        adjusting control parameters to observe the resulting behavior.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= CONTROL ARCHITECTURE ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            CONTROL ARCHITECTURE
+        </p>
+
+        <h2>
+            Inverse-dynamic control system
+        </h2>
+
+    </div>
+
+
+    <p>
+        The controller uses an inverse-dynamic approach to calculate the
+        torque commands required to produce the desired manipulator
+        behavior. Joint-state information is used as feedback while
+        velocity references and desired positions define the commanded
+        motion.
+    </p>
+
+    <p>
+        The system was designed to support both joint-space and task-space
+        control. This allowed the manipulator to be controlled either
+        through individual joint behavior or through higher-level
+        end-effector objectives.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/robotic-controller/control-architecture.png"
+            alt="Dynamic control architecture for the robotic manipulator"
+        >
+
+        <figcaption>
+            <strong>Dynamic control architecture</strong> —
+            Feedback from the manipulator is used to generate torque
+            commands for the desired dynamic response.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= JOINT SPACE CONTROL ================= -->
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            JOINT-SPACE CONTROL
+        </p>
+
+        <h2>
+            Joint-level dynamic control
+        </h2>
+
+    </div>
+
+
+    <p>
+        Joint-space control operates directly on the individual joints
+        of the robotic manipulator. Desired joint positions and velocity
+        references are compared with the measured joint state to determine
+        the required control response.
+    </p>
+
+    <p>
+        The dynamic controller uses this feedback to generate torque
+        commands while accounting for the desired stiffness and damping
+        behavior of the system.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= TASK SPACE CONTROL ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            TASK-SPACE CONTROL
+        </p>
+
+        <h2>
+            End-effector control
+        </h2>
+
+    </div>
+
+
+    <p>
+        Task-space control provides a higher-level method of controlling
+        the manipulator by defining the desired behavior of the robot's
+        end effector rather than specifying every joint independently.
+    </p>
+
+    <p>
+        This approach allows the controller to translate task-level
+        objectives into the corresponding joint behavior required to
+        move the manipulator toward the desired configuration.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= STIFFNESS AND DAMPING ================= -->
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            DYNAMIC BEHAVIOR
+        </p>
+
+        <h2>
+            Adjustable stiffness and damping
+        </h2>
+
+    </div>
+
+
+    <p>
+        A key feature of the controller is the ability to adjust
+        stiffness and damping parameters during operation. These
+        parameters influence how the manipulator responds to position
+        errors and external disturbances.
+    </p>
+
+    <p>
+        The parameters can be modified through ROS services, allowing
+        different dynamic behaviors to be evaluated without modifying
+        the underlying controller implementation.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/robotic-controller/stiffness-damping.png"
+            alt="Robotic manipulator stiffness and damping control"
+        >
+
+        <figcaption>
+            <strong>Dynamic parameter adjustment</strong> —
+            Stiffness and damping parameters can be modified through
+            ROS services to evaluate different dynamic responses.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= ROS INTEGRATION ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            ROS INTEGRATION
+        </p>
+
+        <h2>
+            Distributed control through ROS
+        </h2>
+
+    </div>
+
+
+    <p>
+        The control system was implemented as multiple ROS nodes that
+        communicate through the ROS framework. This modular architecture
+        separates the controller functions and allows individual parts
+        of the system to be developed and tested independently.
+    </p>
+
+    <p>
+        Custom ROS services were developed to provide runtime adjustment
+        of control parameters. ROS parameters were also used to configure
+        the controller and simulation environment.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/robotic-controller/ros-nodes.png"
+            alt="ROS nodes and communication for the robotic controller"
+        >
+
+        <figcaption>
+            <strong>ROS node architecture</strong> —
+            Multiple nodes communicate to implement the control,
+            feedback, and parameter-management functions.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= GAZEBO SIMULATION ================= -->
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            SIMULATION & TESTING
+        </p>
+
+        <h2>
+            Controller testing in Gazebo
+        </h2>
+
+    </div>
+
+
+    <p>
+        Gazebo was used to simulate the robotic manipulator and evaluate
+        the controller before deployment to physical hardware. Simulation
+        scenarios were used to test position tracking, dynamic response,
+        and stability under external disturbances.
+    </p>
+
+    <p>
+        The manipulator was commanded to reach defined positions while
+        the controller response was observed. External forces and
+        perturbations were also introduced to evaluate how the system
+        responded and returned toward its desired state.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/robotic-controller/gazebo-simulation.png"
+            alt="Robotic manipulator simulated in Gazebo"
+        >
+
+        <figcaption>
+            <strong>Gazebo simulation</strong> —
+            Simulation environment used to evaluate manipulator motion,
+            control response, and disturbance rejection.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= FUTURE IMPROVEMENTS ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            FUTURE IMPROVEMENTS
+        </p>
+
+        <h2>
+            Future improvements
+        </h2>
+
+    </div>
+
+
+    <p>
+        Future development could extend the controller with additional
+        control strategies and more extensive testing across different
+        trajectories, loads, and disturbance conditions.
+    </p>
+
+    <p>
+        Additional validation on physical robotic hardware would also
+        provide an opportunity to evaluate the controller's performance
+        under real-world mechanical effects and sensor feedback.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= KEY TECHNOLOGIES ================= -->
+
+<section class="project-section">
+
+<div class="container">
+
+    <div class="project-summary">
+
+        <p class="eyebrow">
+            KEY TECHNOLOGIES
+        </p>
+
+        <div class="tags">
+            <span>ROS</span>
+            <span>Gazebo</span>
+            <span>Dynamic Control</span>
+            <span>Inverse Dynamics</span>
+            <span>Joint-Space Control</span>
+            <span>Task-Space Control</span>
+            <span>ROS Services</span>
+            <span>Robotics</span>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+    <p>
+        Philippe Olivier Fils
+    </p>
+
+    <div>
+
+        <a href="../index.html">
+            Projects
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/philippeolivierfils"
+            target="_blank"
+        >
+            LinkedIn
+        </a>
+
+        <a href="mailto:philippe.fils@mail.mcgill.ca">
+            Email
+        </a>
+
+    </div>
+
+</div>
+
+</footer>
+
+</body> </html>
