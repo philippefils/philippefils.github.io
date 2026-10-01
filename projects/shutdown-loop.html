@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Formula Electric Shutdown Loop | Philippe Olivier Fils</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<!-- ================= PROJECT HEADER ================= -->
+
+<header class="project-header">
+
+<div class="container">
+
+    <a href="../index.html" class="back-link">
+        ← Back to Projects
+    </a>
+
+    <p class="eyebrow">
+        AUTOMOTIVE HARDWARE
+    </p>
+
+    <h1>
+        Formula Electric Shutdown Loop
+    </h1>
+
+    <p class="project-subtitle">
+        Diagnostic PCB designed to monitor the state of the Formula
+        Electric vehicle shutdown loop and simplify electrical fault
+        identification.
+    </p>
+
+    <div class="tags">
+        <span>Digital Logic</span>
+        <span>MOSFET</span>
+        <span>PCB Design</span>
+        <span>Diagnostics</span>
+    </div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO IMAGES ================= -->
+
+<section class="project-hero-image-section">
+
+<div class="container">
+
+    <div class="project-hero-image-pair">
+
+        <figure class="project-figure">
+
+            <div class="project-hero-image">
+                <img
+                    src="../images/formula-electric/shutdown-loop-pcb.png"
+                    alt="Formula Electric shutdown loop PCB"
+                >
+            </div>
+
+            <figcaption>
+                <strong>Diagnostic PCB</strong> —
+                PCB designed to monitor the state of the vehicle shutdown loop.
+            </figcaption>
+
+        </figure>
+
+
+        <figure class="project-figure">
+
+            <div class="project-hero-image">
+                <img
+                    src="../images/formula-electric/shutdown-loop-schematic.png"
+                    alt="Formula Electric shutdown loop schematic"
+                >
+            </div>
+
+            <figcaption>
+                <strong>Shutdown loop circuitry</strong> —
+                MOSFET-based fault indication circuitry for the monitored systems.
+            </figcaption>
+
+        </figure>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= OVERVIEW ================= -->
+
+<main>
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            PROJECT OVERVIEW
+        </p>
+
+        <h2>
+            Diagnostic hardware for vehicle safety systems
+        </h2>
+
+    </div>
+
+
+    <p>
+        As part of the McGill Formula Electric team, I designed a
+        diagnostic PCB for monitoring the state of the vehicle's
+        shutdown loop. The shutdown loop is responsible for ensuring
+        that critical vehicle systems are functioning before the
+        high-voltage system can remain enabled.
+    </p>
+
+    <p>
+        The vehicle contains 13 critical systems, each providing a
+        signal that contributes to the shutdown loop. If one of these
+        systems fails, its signal changes state and prevents the vehicle
+        from powering on or causes the shutdown loop to open while the
+        vehicle is operating.
+    </p>
+
+    <p>
+        The purpose of the board was to make these faults immediately
+        visible to the electrical team, significantly reducing the time
+        required to identify which subsystem was responsible for a
+        shutdown condition.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= SYSTEM ARCHITECTURE ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            SYSTEM ARCHITECTURE
+        </p>
+
+        <h2>
+            13-channel shutdown loop monitoring
+        </h2>
+
+    </div>
+
+
+    <p>
+        Each of the 13 monitored systems provides a shutdown-loop signal
+        to the diagnostic board. Each channel independently monitors its
+        corresponding signal and provides a visual indication when a
+        fault occurs.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/formula-electric/shutdown-loop-overview.png"
+            alt="Overview of the 13-channel Formula Electric shutdown loop monitoring system"
+        >
+
+        <figcaption>
+            <strong>Shutdown loop monitoring</strong> —
+            Each monitored vehicle system is represented by an
+            independent diagnostic channel.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= FAULT DETECTION ================= -->
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            FAULT DETECTION
+        </p>
+
+        <h2>
+            MOSFET-based fault indication
+        </h2>
+
+    </div>
+
+
+    <p>
+        Each diagnostic channel uses a PMOS transistor to detect the
+        corresponding shutdown-loop fault condition. During normal
+        operation, the indicator remains off. When the monitored signal
+        goes low because of a system fault, the PMOS transistor switches
+        on and drives the corresponding LED.
+    </p>
+
+    <p>
+        This creates a direct visual relationship between a shutdown
+        condition and the vehicle subsystem responsible for it. Instead
+        of manually tracing the shutdown loop to determine which system
+        caused the fault, the diagnostic board identifies the affected
+        channel through its LED indicator.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/formula-electric/shutdown-loop-channel.png"
+            alt="PMOS transistor shutdown loop fault indication circuit"
+        >
+
+        <figcaption>
+            <strong>Fault indication channel</strong> —
+            PMOS switching circuitry drives an LED when the corresponding
+            shutdown-loop signal indicates a fault.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= PCB DESIGN ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            PCB DESIGN
+        </p>
+
+        <h2>
+            From schematic to diagnostic hardware
+        </h2>
+
+    </div>
+
+
+    <p>
+        The circuit was developed from the shutdown-loop requirements
+        into an electrical schematic and PCB layout using Altium
+        Designer. The board integrates the 13 independent monitoring
+        channels into a single compact diagnostic interface.
+    </p>
+
+    <p>
+        The design emphasizes clear channel identification and simple
+        troubleshooting. Each LED corresponds directly to one monitored
+        vehicle system, allowing the electrical team to quickly identify
+        the source of a shutdown condition.
+    </p>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/formula-electric/shutdown-loop-schematic.png"
+            alt="Schematic of the Formula Electric shutdown loop diagnostic board"
+        >
+
+        <figcaption>
+            <strong>Electrical schematic</strong> —
+            13 independent MOSFET-based diagnostic channels.
+        </figcaption>
+
+    </figure>
+
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/formula-electric/shutdown-loop-pcb.png"
+            alt="PCB layout of the Formula Electric shutdown loop diagnostic board"
+        >
+
+        <figcaption>
+            <strong>PCB layout</strong> —
+            Compact diagnostic board integrating the complete shutdown
+            loop monitoring circuitry.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
+
+<!-- ================= TESTING ================= -->
+
+<section class="project-section">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            HARDWARE VALIDATION
+        </p>
+
+        <h2>
+            Circuit verification and troubleshooting
+        </h2>
+
+    </div>
+
+
+    <p>
+        The individual monitoring channels were verified by applying
+        the expected shutdown-loop signal states and observing the
+        corresponding LED response.
+    </p>
+
+    <p>
+        Continuity and electrical checks were used to verify the PCB
+        connections and MOSFET circuitry before integration with the
+        vehicle's electrical system.
+    </p>
+
+    <p>
+        The resulting diagnostic interface provided a straightforward
+        method of identifying which monitored subsystem was responsible
+        for a shutdown-loop fault.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= FUTURE IMPROVEMENTS ================= -->
+
+<section class="project-section project-section-alt">
+
+<div class="container project-content-wide">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            FUTURE IMPROVEMENTS
+        </p>
+
+        <h2>
+            Future improvements
+        </h2>
+
+    </div>
+
+
+    <p>
+        A future revision could further improve the diagnostic interface
+        by adding test points or additional measurement capability for
+        each monitored shutdown-loop channel.
+    </p>
+
+    <p>
+        The board could also be expanded to provide additional diagnostic
+        information beyond a simple fault indication, allowing the
+        electrical team to distinguish between different failure modes
+        during vehicle troubleshooting.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECT SUMMARY ================= -->
+
+<section class="project-section">
+
+<div class="container">
+
+    <div class="project-summary">
+
+        <p class="eyebrow">
+            KEY TECHNOLOGIES
+        </p>
+
+        <div class="tags">
+            <span>Altium Designer</span>
+            <span>MOSFET Logic</span>
+            <span>PCB Design</span>
+            <span>Electrical Schematics</span>
+            <span>Diagnostic Hardware</span>
+            <span>Automotive Electronics</span>
+            <span>Hardware Testing</span>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+    <p>
+        Philippe Olivier Fils
+    </p>
+
+    <div>
+
+        <a href="../index.html">
+            Projects
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/philippeolivierfils"
+            target="_blank"
+        >
+            LinkedIn
+        </a>
+
+        <a href="mailto:philippe.fils@mail.mcgill.ca">
+            Email
+        </a>
+
+    </div>
+
+</div>
+
+</footer>
+
+</body> </html>
