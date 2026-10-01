@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Multichannel SiPM Scintillation Detector | Philippe Olivier Fils</title>
+<title>Multichannel SiPM Scintillation Detector | Philippe Olivier Fils</title>
 
-    <link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style.css">
+
 </head>
 
 <body>
@@ -16,82 +16,75 @@
 
 <header class="project-header">
 
-    <div class="container">
+<div class="container">
 
-        <a href="../index.html" class="back-link">
-            ← Back to Projects
-        </a>
+    <a href="../index.html" class="back-link">
+        ← Back to Projects
+    </a>
 
-        <p class="eyebrow">
-            MIXED-SIGNAL HARDWARE
-        </p>
+    <p class="eyebrow">
+        MIXED-SIGNAL HARDWARE
+    </p>
 
-        <h1>
-            Multichannel SiPM Scintillation Detector
-        </h1>
+    <h1>
+        Multichannel SiPM Scintillation Detector
+    </h1>
 
-        <p class="project-subtitle">
-            Electrical hardware design for a modular scintillation detector
-            developed for automated PET radiopharmaceutical synthesis.
-        </p>
+    <p class="project-subtitle">
+        Electrical hardware design for a modular scintillation detector
+        developed for automated PET radiopharmaceutical synthesis.
+    </p>
 
-        <div class="tags">
-            <span>Analog</span>
-            <span>PCB Design</span>
-            <span>ESP32</span>
-            <span>Signal Processing</span>
-        </div>
-
+    <div class="tags">
+        <span>Analog</span>
+        <span>PCB Design</span>
+        <span>ESP32</span>
+        <span>Signal Processing</span>
     </div>
 
-</header>
+</div>
 
+</header>
 
 <!-- ================= HERO IMAGES ================= -->
 
 <section class="project-hero-image-section">
 
-    <div class="container">
+<div class="container">
 
-        <div class="project-hero-image-pair">
+    <div class="project-hero-image-pair">
 
-            <figure class="project-figure project-hero-figure">
+        <figure class="project-figure">
 
-                <div class="project-hero-image">
-                    <img
-                        src="../images/sipm/main-pcb-layout.png"
-                        alt="Altium PCB layout of the SiPM detector main board"
-                    >
-                </div>
+            <img
+                src="../images/sipm/main-pcb-layout.png"
+                alt="Altium PCB layout of the SiPM detector main board"
+            >
 
-                <figcaption>
-                    <strong>PCB layout</strong> — Main detector PCB designed in Altium Designer.
-                </figcaption>
+            <figcaption>
+                <strong>PCB layout</strong> — Main detector PCB designed in Altium Designer.
+            </figcaption>
 
-            </figure>
+        </figure>
 
+        <figure class="project-figure">
 
-            <figure class="project-figure project-hero-figure">
+            <img
+                src="../images/sipm/main-pcb-assembled.jpg"
+                alt="Assembled SiPM detector main PCB"
+            >
 
-                <div class="project-hero-image">
-                    <img
-                        src="../images/sipm/main-pcb-assembled.jpg"
-                        alt="Assembled SiPM detector main PCB"
-                    >
-                </div>
+            <figcaption>
+                <strong>Assembled PCB</strong> — JLCPCB-manufactured board assembled using reflow and hand soldering.
+            </figcaption>
 
-                <figcaption>
-                    <strong>Assembled PCB</strong> — JLCPCB-manufactured board assembled using reflow and hand soldering.
-                </figcaption>
-
-            </figure>
-
-        </div>
+        </figure>
 
     </div>
 
-</section>
+</div>
 
+</section>
 
 <!-- ================= OVERVIEW ================= -->
 
@@ -99,97 +92,92 @@
 
 <section class="project-section">
 
-    <div class="container project-content-wide">
+<div class="container project-content-wide">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <p class="eyebrow">
-                PROJECT OVERVIEW
-            </p>
-
-            <h2>
-                Modular radiation detection hardware
-            </h2>
-
-        </div>
-
-
-        <p>
-            As part of my electrical engineering capstone project, I designed
-            the electrical hardware for a modular scintillation detector in
-            collaboration with the Montreal Neurological Institute. The system
-            uses silicon photomultipliers (SiPMs) to detect radiation-induced
-            scintillation and process the resulting electrical pulses before
-            digitization by an ESP32.
+        <p class="eyebrow">
+            PROJECT OVERVIEW
         </p>
 
-        <p>
-            Each detector module provides two independent detection channels.
-            Two modules can be stacked to create a four-channel detector
-            system. The modules share power through a dedicated interconnection
-            while remaining independently removable, allowing the system to
-            scale without redesigning the electronics.
-        </p>
-
-        <p>
-            My work focused on the electrical hardware, including the analog
-            signal-processing circuitry, SiPM interface, power circuitry,
-            schematic capture, PCB layout, assembly, and hardware validation.
-        </p>
+        <h2>
+            Modular radiation detection hardware
+        </h2>
 
     </div>
 
-</section>
+    <p>
+        As part of my electrical engineering capstone project, I designed
+        the electrical hardware for a modular scintillation detector in
+        collaboration with the Montreal Neurological Institute. The system
+        uses silicon photomultipliers (SiPMs) to detect radiation-induced
+        scintillation and process the resulting electrical pulses before
+        digitization by an ESP32.
+    </p>
 
+    <p>
+        Each detector module provides two independent detection channels.
+        Two modules can be stacked to create a four-channel detector
+        system. The modules share power through a dedicated interconnection
+        while remaining independently removable, allowing the system to
+        scale without redesigning the electronics.
+    </p>
+
+    <p>
+        My work focused on the electrical hardware, including the analog
+        signal-processing circuitry, SiPM interface, power circuitry,
+        schematic capture, PCB layout, assembly, and hardware validation.
+    </p>
+
+</div>
+
+</section>
 
 <!-- ================= SYSTEM ARCHITECTURE ================= -->
 
 <section class="project-section project-section-alt">
 
-    <div class="container project-content-wide">
+<div class="container project-content-wide">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <p class="eyebrow">
-                SYSTEM ARCHITECTURE
-            </p>
-
-            <h2>
-                Two-channel modular detector
-            </h2>
-
-        </div>
-
-
-        <figure class="project-figure project-figure-modular">
-
-            <img
-                src="../images/sipm/modular-cross.png"
-                alt="Cross section showing stacked detector modules"
-            >
-
-            <figcaption>
-                <strong>Modular detector architecture</strong> —
-                Two-channel modules can be stacked to form a four-channel
-                detector while sharing power through the module interconnection.
-            </figcaption>
-
-        </figure>
-
-
-        <p>
-            The modular architecture was designed around scalability and
-            maintainability. Each module contains its own signal-processing
-            circuitry, SiPM interface, power circuitry, and microcontroller
-            interface. Power can be supplied to one module and distributed
-            through the stack, eliminating the need for separate power
-            connections for every module.
+        <p class="eyebrow">
+            SYSTEM ARCHITECTURE
         </p>
+
+        <h2>
+            Two-channel modular detector
+        </h2>
 
     </div>
 
-</section>
+    <figure class="project-figure project-figure-large">
 
+        <img
+            src="../images/sipm/modular-cross.png"
+            alt="Cross section showing stacked detector modules"
+        >
+
+        <figcaption>
+            <strong>Modular detector architecture</strong> —
+            Two-channel modules can be stacked to form a four-channel
+            detector while sharing power through the module interconnection.
+        </figcaption>
+
+    </figure>
+
+    <p>
+        The modular architecture was designed around scalability and
+        maintainability. Each module contains its own signal-processing
+        circuitry, SiPM interface, power circuitry, and microcontroller
+        interface. Power can be supplied to one module and distributed
+        through the stack, eliminating the need for separate power
+        connections for every module.
+    </p>
+
+</div>
+
+</section>
 
 <!-- ================= SIGNAL PROCESSING ================= -->
 
@@ -209,7 +197,6 @@
 
     </div>
 
-
     <p>
         Each channel uses a MICROFC-60035-SMT-TR SiPM operated at
         approximately 29.5 V bias. The raw SiPM pulse is first amplified
@@ -223,9 +210,6 @@
         amplitude of short SiPM pulses and holds the detected peak long
         enough for the ESP32 ADC to sample it.
     </p>
-
-
-    <!-- Raw signal simulations -->
 
     <figure class="project-figure project-figure-large">
 
@@ -241,7 +225,6 @@
 
     </figure>
 
-
     <figure class="project-figure project-figure-large">
 
         <img
@@ -255,9 +238,6 @@
         </figcaption>
 
     </figure>
-
-
-    <!-- Signal processing circuit -->
 
     <figure class="project-figure project-figure-large">
 
@@ -274,9 +254,6 @@
 
     </figure>
 
-
-    <!-- Amplifier simulation -->
-
     <figure class="project-figure project-figure-large">
 
         <img
@@ -291,9 +268,6 @@
         </figcaption>
 
     </figure>
-
-
-    <!-- Peak detection simulation -->
 
     <figure class="project-figure project-figure-large">
 
@@ -313,213 +287,202 @@
 
 </section>
 
-
 <!-- ================= POWER ================= -->
 
 <section class="project-section project-section-alt">
 
-    <div class="container project-content-wide">
+<div class="container project-content-wide">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <p class="eyebrow">
-                POWER DESIGN
-            </p>
-
-            <h2>
-                SiPM bias and board power
-            </h2>
-
-        </div>
-
-
-        <p>
-            The detector accepts a 5 V external supply through a DC barrel
-            connector. The board distributes the 5 V supply to the required
-            circuitry while the SiPM bias voltage is generated locally using
-            a DC-DC boost converter.
+        <p class="eyebrow">
+            POWER DESIGN
         </p>
 
-        <p>
-            The boost stage generates approximately 29.5 V required to bias
-            the SiPM. The remaining circuitry operates from the available
-            5 V and 3.3 V rails, with local supply decoupling used throughout
-            the design.
-        </p>
-
-
-        <div class="project-figure-grid">
-
-            <figure class="project-figure">
-
-                <img
-                    src="../images/sipm/ltspice-dcdc-circuit.png"
-                    alt="LTSpice DC-DC boost circuit"
-                >
-
-                <figcaption>
-                    <strong>SiPM bias supply</strong> —
-                    DC-DC boost circuit used to generate the detector bias voltage.
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="project-figure">
-
-                <img
-                    src="../images/sipm/DC-DC-boost-sim.png"
-                    alt="LTSpice DC-DC boost simulation"
-                >
-
-                <figcaption>
-                    <strong>Boost converter simulation</strong> —
-                    Simulation of the approximately 29.5 V SiPM bias supply
-                    generated from the 5 V input.
-                </figcaption>
-
-            </figure>
-
-        </div>
+        <h2>
+            SiPM bias and board power
+        </h2>
 
     </div>
 
-</section>
+    <p>
+        The detector accepts a 5 V external supply through a DC barrel
+        connector. The board distributes the 5 V supply to the required
+        circuitry while the SiPM bias voltage is generated locally using
+        a DC-DC boost converter.
+    </p>
 
+    <p>
+        The boost stage generates approximately 29.5 V required to bias
+        the SiPM. The remaining circuitry operates from the available
+        5 V and 3.3 V rails, with local supply decoupling used throughout
+        the design.
+    </p>
+
+    <div class="project-figure-grid">
+
+        <figure class="project-figure">
+
+            <img
+                src="../images/sipm/ltspice-dcdc-circuit.png"
+                alt="LTSpice DC-DC boost circuit"
+            >
+
+            <figcaption>
+                <strong>SiPM bias supply</strong> —
+                DC-DC boost circuit used to generate the detector bias voltage.
+            </figcaption>
+
+        </figure>
+
+        <figure class="project-figure">
+
+            <img
+                src="../images/sipm/DC-DC-boost-sim.png"
+                alt="LTSpice DC-DC boost simulation"
+            >
+
+            <figcaption>
+                <strong>Boost converter simulation</strong> —
+                Simulation of the approximately 29.5 V SiPM bias supply
+                generated from the 5 V input.
+            </figcaption>
+
+        </figure>
+
+    </div>
+
+</div>
+
+</section>
 
 <!-- ================= PCB DESIGN ================= -->
 
 <section class="project-section">
 
-    <div class="container project-content-wide">
+<div class="container project-content-wide">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <p class="eyebrow">
-                PCB DESIGN
-            </p>
-
-            <h2>
-                From schematic to assembled hardware
-            </h2>
-
-        </div>
-
-
-        <p>
-            I designed the detector PCB in Altium Designer, integrating the
-            SiPM interface, analog signal-processing circuitry, power
-            electronics, microcontroller connections, and dedicated test
-            points into a compact two-layer board.
+        <p class="eyebrow">
+            PCB DESIGN
         </p>
 
-        <p>
-            The analog circuitry was physically clustered together and signal
-            paths were kept short and direct to reduce unnecessary noise
-            coupling. Test points were incorporated throughout the signal
-            chain to allow individual stages to be probed during validation.
-        </p>
-
-
-        <figure class="project-figure project-figure-large">
-
-            <img
-                src="../images/sipm/main-pcb-schematic.png"
-                alt="Schematic of the SiPM detector main PCB"
-            >
-
-            <figcaption>
-                <strong>Main PCB schematic</strong> —
-                Integrated signal processing, power, SiPM, and microcontroller
-                interfaces.
-            </figcaption>
-
-        </figure>
-
-
-        <figure class="project-figure project-figure-large">
-
-            <img
-                src="../images/sipm/main-pcb-layout.png"
-                alt="Altium layout of the SiPM detector PCB"
-            >
-
-            <figcaption>
-                <strong>PCB layout</strong> —
-                Two-layer board layout with clustered analog circuitry and
-                accessible test points.
-            </figcaption>
-
-        </figure>
+        <h2>
+            From schematic to assembled hardware
+        </h2>
 
     </div>
 
-</section>
+    <p>
+        I designed the detector PCB in Altium Designer, integrating the
+        SiPM interface, analog signal-processing circuitry, power
+        electronics, microcontroller connections, and dedicated test
+        points into a compact two-layer board.
+    </p>
 
+    <p>
+        The analog circuitry was physically clustered together and signal
+        paths were kept short and direct to reduce unnecessary noise
+        coupling. Test points were incorporated throughout the signal
+        chain to allow individual stages to be probed during validation.
+    </p>
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/sipm/main-pcb-schematic.png"
+            alt="Schematic of the SiPM detector main PCB"
+        >
+
+        <figcaption>
+            <strong>Main PCB schematic</strong> —
+            Integrated signal processing, power, SiPM, and microcontroller
+            interfaces.
+        </figcaption>
+
+    </figure>
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/sipm/main-pcb-layout.png"
+            alt="Altium layout of the SiPM detector PCB"
+        >
+
+        <figcaption>
+            <strong>PCB layout</strong> —
+            Two-layer board layout with clustered analog circuitry and
+            accessible test points.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+</section>
 
 <!-- ================= ASSEMBLY & TESTING ================= -->
 
 <section class="project-section project-section-alt">
 
-    <div class="container project-content-wide">
+<div class="container project-content-wide">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <p class="eyebrow">
-                HARDWARE VALIDATION
-            </p>
-
-            <h2>
-                Assembly, debugging, and testing
-            </h2>
-
-        </div>
-
-
-        <p>
-            The PCBs were manufactured by JLCPCB and I performed the board
-            assembly using both reflow and hand soldering techniques. Hardware
-            validation was performed progressively, testing individual
-            portions of the board before full system integration.
+        <p class="eyebrow">
+            HARDWARE VALIDATION
         </p>
 
-        <p>
-            Initial continuity testing was used to verify solder joints,
-            identify opens, and check for unintended shorts. The SiPM interface
-            was then independently tested before powering the board.
-        </p>
-
-        <p>
-            The amplifier and peak-detection stages were validated using a
-            function generator to inject known signals while monitoring the
-            outputs with an oscilloscope. This allowed the gain, signal
-            response, peak detection, and hold behavior to be evaluated
-            independently.
-        </p>
-
-
-        <figure class="project-figure project-figure-large">
-
-            <img
-                src="../images/sipm/test-setup.jpg"
-                alt="Test setup for validating the amplifier and peak detection stages"
-            >
-
-            <figcaption>
-                <strong>Hardware validation setup</strong> —
-                Oscilloscope and signal generator used to evaluate the analog
-                signal-processing stages.
-            </figcaption>
-
-        </figure>
+        <h2>
+            Assembly, debugging, and testing
+        </h2>
 
     </div>
+
+    <p>
+        The PCBs were manufactured by JLCPCB and I performed the board
+        assembly using both reflow and hand soldering techniques. Hardware
+        validation was performed progressively, testing individual
+        portions of the board before full system integration.
+    </p>
+
+    <p>
+        Initial continuity testing was used to verify solder joints,
+        identify opens, and check for unintended shorts. The SiPM interface
+        was then independently tested before powering the board.
+    </p>
+
+    <p>
+        The amplifier and peak-detection stages were validated using a
+        function generator to inject known signals while monitoring the
+        outputs with an oscilloscope. This allowed the gain, signal
+        response, peak detection, and hold behavior to be evaluated
+        independently.
+    </p>
+
+    <figure class="project-figure project-figure-large">
+
+        <img
+            src="../images/sipm/test-setup.jpg"
+            alt="Test setup for validating the amplifier and peak detection stages"
+        >
+
+        <figcaption>
+            <strong>Hardware validation setup</strong> —
+            Oscilloscope and signal generator used to evaluate the analog
+            signal-processing stages.
+        </figcaption>
+
+    </figure>
+
+</div>
 
 </section>
 
 <!-- ================= FUTURE IMPROVEMENTS ================= -->
 
-<section class="project-section project-section-alt">
+<section class="project-section">
 
 <div class="container project-content-wide">
 
@@ -534,7 +497,6 @@
         </h2>
 
     </div>
-
 
     <p>
         Future iterations of the detector could incorporate additional
@@ -560,72 +522,68 @@
 
 </section>
 
-
-    
 <!-- ================= PROJECT SUMMARY ================= -->
 
 <section class="project-section">
 
-    <div class="container">
+<div class="container">
 
-        <div class="project-summary">
+    <div class="project-summary">
 
-            <p class="eyebrow">
-                KEY TECHNOLOGIES
-            </p>
+        <p class="eyebrow">
+            KEY TECHNOLOGIES
+        </p>
 
-            <div class="tags">
-                <span>Altium Designer</span>
-                <span>Analog Circuit Design</span>
-                <span>LTSpice</span>
-                <span>ESP32</span>
-                <span>SiPM</span>
-                <span>PCB Assembly</span>
-                <span>Signal Processing</span>
-                <span>Hardware Testing</span>
-            </div>
-
+        <div class="tags">
+            <span>Altium Designer</span>
+            <span>Analog Circuit Design</span>
+            <span>LTSpice</span>
+            <span>ESP32</span>
+            <span>SiPM</span>
+            <span>PCB Assembly</span>
+            <span>Signal Processing</span>
+            <span>Hardware Testing</span>
         </div>
 
     </div>
+
+</div>
 
 </section>
 
 </main>
 
-
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        <p>
-            Philippe Olivier Fils
-        </p>
+    <p>
+        Philippe Olivier Fils
+    </p>
 
-        <div>
+    <div>
 
-            <a href="../index.html">
-                Projects
-            </a>
+        <a href="../index.html">
+            Projects
+        </a>
 
-            <a
-                href="https://www.linkedin.com/in/philippeolivierfils"
-                target="_blank"
-            >
-                LinkedIn
-            </a>
+        <a
+            href="https://www.linkedin.com/in/philippeolivierfils"
+            target="_blank"
+        >
+            LinkedIn
+        </a>
 
-            <a href="mailto:philippe.fils@mail.mcgill.ca">
-                Email
-            </a>
-
-        </div>
+        <a href="mailto:philippe.fils@mail.mcgill.ca">
+            Email
+        </a>
 
     </div>
 
+</div>
+
 </footer>
 
-</body>
-</html>
+</body> </html>
