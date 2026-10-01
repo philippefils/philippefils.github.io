@@ -823,3 +823,80 @@ footer a {
     }
 
 }
+/* =========================================================
+   PROJECT FIGURES
+   ========================================================= */
+
+.project-figure {
+    margin: 0;
+    background: white;
+    border: 1px solid #e0e3e7;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project-figure figcaption {
+    padding: 13px 18px 15px;
+    color: #626a73;
+    font-size: 14px;
+    line-height: 1.5;
+    border-top: 1px solid #e0e3e7;
+}
+
+.project-figure figcaption strong {
+    color: #171a1f;
+}
+
+
+/* =========================================================
+   PROJECT FIGURE LAYOUTS
+   ========================================================= */
+
+.project-figure-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.project-figure-large {
+    margin-top: 40px;
+}
+
+
+/* =========================================================
+   PROJECT HERO IMAGE PAIR
+   ========================================================= */
+
+.project-hero-image-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.project-hero-image-pair .project-figure {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PROJECT FIGURE MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .project-hero-image-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .project-figure-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
