@@ -121,16 +121,9 @@ body {
 
 
 .project-image {
-    height: 250px;
-    background: #dfe3e8;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #7b838c;
-    font-size: 13px;
-    letter-spacing: 1px;
+height: 250px;
+background: #dfe3e8;
+overflow: hidden;
 }
 
 .project-image img {
