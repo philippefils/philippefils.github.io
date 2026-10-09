@@ -1,410 +1,582 @@
+
+
+
 <!DOCTYPE html>
 
 <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Philippe Olivier Fils | Hardware Engineering</title>
+<title>BJT-Based Operational Amplifier | Philippe Olivier Fils</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 
 </head>
 
 <body>
 
-<!-- =====================================================
-     HEADER / HERO
-     ===================================================== -->
+<!-- PROJECT HEADER -->
 
-<header class="hero">
+<header class="project-header">
     <div class="container">
 
-        <p class="eyebrow">ELECTRICAL ENGINEERING &amp; HARDWARE DESIGN</p>
+        <a href="../index.html" class="back-link">
+            ← Back to Projects
+        </a>
 
-        <h1>Philippe Olivier Fils</h1>
+        <p class="eyebrow">ANALOG CIRCUIT DESIGN</p>
 
-        <p class="hero-subtitle">
-            Hardware Design · PCB · Embedded Systems
+        <h1>BJT-Based Operational Amplifier</h1>
+
+        <p class="project-subtitle">
+            Design, LTspice simulation, stability compensation, and
+            evaluation of a discrete three-stage operational amplifier
+            using commercially available bipolar junction transistors.
         </p>
 
-        <div class="hero-links">
-            <a href="https://www.linkedin.com/in/philippeolivierfils"
-               target="_blank"
-               rel="noopener noreferrer">
-                LinkedIn
-            </a>
-
-            <a href="resume.pdf" target="_blank">
-                Resume
-            </a>
-
-            <a href="mailto:philippe.fils@mail.mcgill.ca">
-                Contact
-            </a>
+        <div class="tags">
+            <span>Analog Electronics</span>
+            <span>BJT</span>
+            <span>LTspice</span>
+            <span>Feedback</span>
+            <span>Circuit Simulation</span>
         </div>
 
     </div>
 </header>
 
 
-<!-- =====================================================
-     PROJECTS
-     ===================================================== -->
-
-<main>
-
-    <section class="projects-section">
-        <div class="container">
-
-            <p class="eyebrow">SELECTED WORK</p>
-
-            <h2>Engineering Projects</h2>
-
-            <p class="section-intro">
-                A selection of projects spanning hardware design, PCB development,
-                analog and digital electronics, embedded systems, robotics, and FPGA design.
-            </p>
-
-
-            <div class="projects-grid">
-
-
-                <!-- =================================================
-                     1. SIPM DETECTOR
-                     ================================================= -->
-
-                <a href="projects/sipm-detector.html" class="project-card">
-
-                    <div class="project-image">
-                        <img src="images/sipm/main-pcb-layout.png"
-                             alt="SiPM scintillation detector PCB layout">
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            MIXED SIGNAL HARDWARE
-                        </p>
-
-                        <h3>
-                            Multichannel Scintillation Detector Using Silicon Photomultipliers (SiPM)
-                        </h3>
-
-                        <p>
-                            Cost-efficient radiation detection system featuring
-                            analog signal processing, power management, PCB design,
-                            and embedded data acquisition.
-                        </p>
-
-                        <div class="tags">
-                            <span>Mixed Signal</span>
-                            <span>Analog Design</span>
-                            <span>PCB</span>
-                            <span>Embedded System</span>
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- =================================================
-                     2. MP3 PLAYER
-                     ================================================= -->
-
-                <a href="projects/mp3-player.html" class="project-card">
-
-                    <div class="project-image">
-                        <div class="project-image-placeholder">
-                            MP3 PLAYER
-                        </div>
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            EMBEDDED HARDWARE
-                        </p>
-
-                        <h3>
-                            Custom ESP32-S3 MP3 Player
-                        </h3>
-
-                        <p>
-                            Custom embedded audio system integrating USB-C,
-                            LiPo power management, microSD storage, audio
-                            processing, and a user interface.
-                        </p>
-
-                        <div class="tags">
-                            <span>Embedded Systems</span>
-                            <span>Audio Electronics</span>
-                            <span>Power Management</span>
-                            <span>PCB Design</span>
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- =================================================
-                     3. FORMULA ELECTRIC SHUTDOWN LOOP
-                     ================================================= -->
-
-                <a href="projects/shutdown-loop.html" class="project-card">
-
-                    <div class="project-image">
-                        <img src="images/shutdown-loop/pcb-2d-layout-top.png"
-                             alt="Formula Electric shutdown loop PCB layout">
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            AUTOMOTIVE HARDWARE
-                        </p>
-
-                        <h3>
-                            Formula Electric Shutdown Loop
-                        </h3>
-
-                        <p>
-                            Diagnostic PCB designed to monitor 13 critical
-                            vehicle systems and simplify electrical fault
-                            identification.
-                        </p>
-
-                        <div class="tags">
-                            <span>Digital Logic</span>
-                            <span>PCB Design</span>
-                            <span>MOSFETs</span>
-                            <span>Diagnostics</span>
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- =================================================
-                     4. ROBOTIC MANIPULATOR CONTROLLER
-                     ================================================= -->
-
-                <a href="projects/robotic-controller.html" class="project-card">
-
-                    <div class="project-image">
-                        <img src="../images/robotic-arm/robotic-arm-sim.png"
-                         alt="Robotic manipulator arm in Gazebo simulation">
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            ROBOTICS &amp; CONTROL
-                        </p>
-
-                        <h3>
-                            Dynamic Controller for a Robotic Manipulator Arm
-                        </h3>
-
-                        <p>
-                            Dynamically controlled inverse-dynamic system
-                            developed in ROS and Gazebo with joint-space,
-                            task-space, stiffness, and damping control.
-                        </p>
-
-                        <div class="tags">
-                            <span>ROS</span>
-                            <span>Gazebo</span>
-                            <span>Control Systems</span>
-                            <span>Robotics</span>
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- =================================================
-                     5. BJT OP-AMP
-                     ================================================= -->
-
-                <a href="projects/bjt-op-amp.html" class="project-card">
-
-                    <div class="project-image">
-                        <img src="../images/bjt-opamp/diff-stage.png"
-                         alt="Differential amplifier stage of the BJT-based operational amplifier">
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            ANALOG ELECTRONICS
-                        </p>
-
-                        <h3>
-                            BJT-Based Operational Amplifier
-                        </h3>
-
-                        <p>
-                            Discrete operational amplifier designed and
-                            simulated using multiple BJT amplifier stages,
-                            including differential, buffer, and Class AB
-                            output stages.
-                        </p>
-
-                        <div class="tags">
-                            <span>Analog Design</span>
-                            <span>LTSpice</span>
-                            <span>BJT</span>
-                            <span>Amplifiers</span>
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- =================================================
-                     6. FPGA SEQUENCE COUNTER
-                     ================================================= -->
-
-                <a href="projects/fpga-counter.html" class="project-card">
-
-                    <div class="project-image">
-                        <img src="../images/fpga-counter/FSM-seq-detector-0010.png"
-                         alt="FSM for detecting the 0010 binary sequence">
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            DIGITAL HARDWARE
-                        </p>
-
-                        <h3>
-                            FPGA Binary Sequence Counter
-                        </h3>
-
-                        <p>
-                            VHDL-based Moore FSM design implemented on an
-                            Altera DE1-SoC FPGA to detect and count specific
-                            4-bit input sequences.
-                        </p>
-
-                        <div class="tags">
-                            <span>FPGA</span>
-                            <span>VHDL</span>
-                            <span>FSM</span>
-                            <span>Digital Design</span>
-                        </div>
-
-                    </div>
-
-                </a>
-
-
-                <!-- =================================================
-                     7. BLUETOOTH CAR
-                     ================================================= -->
-
-                <a href="projects/bt-rc-car.html" class="project-card">
-
-                    <div class="project-image">
-                        <div class="project-image-placeholder">
-                            BLUETOOTH CAR
-                        </div>
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            EMBEDDED SYSTEMS
-                        </p>
-
-                        <h3>
-                            Bluetooth Remote-Controlled Car
-                        </h3>
-
-                        <p>
-                            Arduino-based robotic platform upgraded with
-                            Bluetooth control and a custom handheld
-                            controller using a joystick and pushbuttons.
-                        </p>
-
-                        <div class="tags">
-                            <span>Arduino</span>
-                            <span>Bluetooth</span>
-                            <span>C++</span>
-                            <span>Embedded Systems</span>
-                        </div>
-
-                    </div>
-
-                </a>
-
-
+<!-- HERO IMAGES -->
+
+<section class="project-section">
+    <div class="container">
+
+        <div class="project-gallery">
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/bjt-op-amp/diff-stage.png"
+                    alt="Differential amplifier stage of the discrete BJT op-amp"
+                >
+                <figcaption>
+                    Differential input stage — the first stage of the
+                    operational amplifier architecture.
+                </figcaption>
+            </figure>
+
+            <figure class="project-figure project-figure-large">
+                <img
+                    src="../images/bjt-op-amp/output-stage.png"
+                    alt="Class AB output stage of the discrete BJT op-amp"
+                >
+                <figcaption>
+                    Class AB output stage — the output-driving stage
+                    of the amplifier.
+                </figcaption>
+            </figure>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- OVERVIEW -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">OVERVIEW</p>
+
+        <h2>Building an operational amplifier from discrete transistors</h2>
+
+        <p>
+            This project involved designing, simulating, and validating
+            a general-purpose operational amplifier constructed from
+            commercially available bipolar junction transistors (BJTs).
+            The work combined amplifier stages developed in previous
+            electronics laboratories into a complete three-stage design.
+        </p>
+
+        <p>
+            The amplifier integrated a differential gain stage, a buffer
+            stage, and a Class AB output stage. LTspice was used to evaluate
+            voltage gain, input resistance, frequency response, voltage
+            transfer characteristics, and input and output operating ranges.
+        </p>
+
+        <p>
+            A major part of the design process was addressing the stability
+            of the combined amplifier. Phase-margin analysis identified
+            the need for frequency compensation, and alternative capacitor
+            configurations were evaluated before selecting a compensation
+            approach.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- ARCHITECTURE -->
+
+<section class="project-section project-section-alt">
+    <div class="container">
+
+        <p class="eyebrow">AMPLIFIER ARCHITECTURE</p>
+
+        <h2>Three stages with distinct functions</h2>
+
+        <p>
+            The amplifier combined three circuit blocks into a single
+            signal chain. Each stage contributed a different function
+            to the overall design.
+        </p>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <h3>01 — Differential amplifier</h3>
+                <p>
+                    The input stage provides differential signal
+                    amplification and uses an active load as part of
+                    the voltage-gain architecture.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>02 — Buffer stage</h3>
+                <p>
+                    A buffer incorporating diode-connected transistors
+                    interfaces the differential stage with the
+                    common-emitter amplifier stage.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>03 — Class AB output stage</h3>
+                <p>
+                    The output stage provides the final output drive.
+                    The complete amplifier was evaluated with a
+                    330 Ω load.
+                </p>
             </div>
 
         </div>
-    </section>
+
+    </div>
+</section>
 
 
-    <!-- =====================================================
-         ABOUT
-         ===================================================== -->
+<!-- DIFFERENTIAL STAGE -->
 
-    <section class="about-section">
-        <div class="container">
-
-            <p class="eyebrow">ABOUT</p>
-
-            <h2>EE focused on hardware.</h2>
-
-            <p>
-                Electrical Hardware Designer with experience developing
-                mixed-signal embedded systems for medical, aerospace,
-                and automotive applications. Skilled in Altium Designer,
-                PCB design, hardware validation, FPGA development,
-                and system integration.
-            </p>
-
-            <p>
-                Experienced taking hardware from concept through
-                prototyping, debugging, and validation.
-            </p>
-
-        </div>
-    </section>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer>
+<section class="project-section">
     <div class="container">
 
+        <p class="eyebrow">STAGE 01</p>
+
+        <h2>Differential input stage</h2>
+
         <p>
-            Philippe Olivier Fils
+            The differential amplifier formed the input stage of the
+            operational amplifier. An active load was incorporated
+            into the stage before integrating it with the buffer and
+            Class AB output circuitry.
         </p>
 
-        <div class="footer-links">
+        <figure class="project-figure project-figure-large">
+            <img
+                src="../images/bjt-op-amp/diff-stage.png"
+                alt="Differential amplifier circuit stage"
+            >
+            <figcaption>
+                Differential amplifier stage used in the complete
+                three-stage design.
+            </figcaption>
+        </figure>
 
-            <a href="https://www.linkedin.com/in/philippeolivierfils"
-               target="_blank"
-               rel="noopener noreferrer">
-                LinkedIn
-            </a>
+    </div>
+</section>
 
-            <a href="mailto:philippe.fils@mail.mcgill.ca">
-                Email
-            </a>
+
+<!-- BUFFER STAGE -->
+
+<section class="project-section project-section-alt">
+    <div class="container">
+
+        <p class="eyebrow">STAGE 02</p>
+
+        <h2>Buffer and common-emitter amplifier</h2>
+
+        <p>
+            The intermediate stage used diode-connected transistors
+            in the buffer circuit alongside a common-emitter amplifier.
+            This stage was integrated between the differential input
+            stage and the Class AB output stage.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img
+                src="../images/bjt-op-amp/buffer-stage.png"
+                alt="Diode-connected transistor buffer and common-emitter amplifier"
+            >
+            <figcaption>
+                Buffer and common-emitter amplifier stage.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+
+<!-- OUTPUT STAGE -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">STAGE 03</p>
+
+        <h2>Class AB output stage</h2>
+
+        <p>
+            The Class AB output stage completed the amplifier architecture.
+            After combining the three stages, the circuit was evaluated
+            under a 330 Ω load to assess the effects of loading on its
+            gain, frequency response, and operating range.
+        </p>
+
+        <figure class="project-figure project-figure-large">
+            <img
+                src="../images/bjt-op-amp/output-stage.png"
+                alt="Class AB output stage circuit"
+            >
+            <figcaption>
+                Class AB output stage of the discrete operational amplifier.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
+
+
+<!-- SIMULATION RESULTS -->
+
+<section class="project-section project-section-alt">
+    <div class="container">
+
+        <p class="eyebrow">LTSPICE ANALYSIS</p>
+
+        <h2>Simulated performance before compensation</h2>
+
+        <p>
+            LTspice simulations were used to characterize the integrated
+            amplifier before adding frequency compensation. The initial
+            circuit achieved high open-loop gain, but its phase-margin
+            analysis revealed a stability problem.
+        </p>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <p class="eyebrow">OPEN-LOOP VOLTAGE GAIN</p>
+                <h3>−2505.29 V/V</h3>
+                <p>
+                    Simulated low-frequency voltage gain of the
+                    uncompensated amplifier.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <p class="eyebrow">INPUT RESISTANCE</p>
+                <h3>886.4 kΩ</h3>
+                <p>
+                    Input resistance reported by the initial
+                    LTspice analysis.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <p class="eyebrow">INITIAL CUTOFF FREQUENCY</p>
+                <h3>9.5 kHz</h3>
+                <p>
+                    Reported cutoff frequency before compensation.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <p class="eyebrow">INITIAL PHASE MARGIN</p>
+                <h3>−28.73°</h3>
+                <p>
+                    Negative phase margin indicated that the
+                    uncompensated design did not meet the
+                    intended stability requirement.
+                </p>
+            </div>
+
+        </div>
+
+        <p>
+            The initial voltage-transfer analysis also showed that the
+            output remained close to 0 V over an input range of
+            approximately −3.4 V to +3.8 V under the simulated
+            conditions. The report recorded a maximum output swing
+            of 6.07 V and a corresponding maximum input swing of 2.28 mV.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- COMPENSATION -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">FREQUENCY COMPENSATION</p>
+
+        <h2>Trading bandwidth for stability</h2>
+
+        <p>
+            The initial phase-margin result motivated the addition of
+            frequency compensation. Two capacitor configurations were
+            evaluated in LTspice to slow the amplifier's frequency
+            response and improve phase margin.
+        </p>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <h3>Option A — 100 nF</h3>
+                <p>
+                    A 100 nF capacitor connected between the amplifier
+                    input and output.
+                </p>
+                <p>
+                    <strong>Phase margin:</strong> 42.23°
+                </p>
+                <p>
+                    <strong>Cutoff frequency:</strong> 117.86 Hz
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Option B — 500 pF</h3>
+                <p>
+                    A 500 pF capacitor connected between the buffer-stage
+                    input node and ground.
+                </p>
+                <p>
+                    <strong>Phase margin:</strong> 38.34°
+                </p>
+                <p>
+                    <strong>Cutoff frequency:</strong> 348.51 Hz
+                </p>
+            </div>
+
+        </div>
+
+        <p>
+            Both configurations improved phase margin beyond the
+            project's minimum target of 25°. The 100 nF input-to-output
+            capacitor was selected because it provided the required
+            phase margin using a single compensation capacitor and
+            was considered easier to implement.
+        </p>
+
+        <p>
+            The results also demonstrated the trade-off between stability
+            and bandwidth: improving phase margin substantially reduced
+            the amplifier's cutoff frequency.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- LOADED PERFORMANCE -->
+
+<section class="project-section project-section-alt">
+    <div class="container">
+
+        <p class="eyebrow">LOADED PERFORMANCE</p>
+
+        <h2>Evaluating the amplifier with a 330 Ω load</h2>
+
+        <p>
+            After selecting the compensation approach, the amplifier
+            was evaluated with a 330 Ω load. The reported voltage gain
+            remained approximately −2505 V/V, indicating that the
+            load had negligible effect on the simulated gain.
+        </p>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <p class="eyebrow">LOADED VOLTAGE GAIN</p>
+                <h3>≈ −2505 V/V</h3>
+                <p>
+                    Gain remained approximately unchanged after
+                    connecting the 330 Ω load.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <p class="eyebrow">LOADED CUTOFF FREQUENCY</p>
+                <h3>116.85 Hz</h3>
+                <p>
+                    Reported −3 dB cutoff frequency after loading.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <p class="eyebrow">LOADED PHASE MARGIN</p>
+                <h3>42.23°</h3>
+                <p>
+                    The reported phase margin remained unchanged
+                    after connecting the load.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <p class="eyebrow">MAXIMUM OUTPUT SWING</p>
+                <h3>6.5 V</h3>
+                <p>
+                    Reported maximum output swing, corresponding
+                    to a maximum input swing of 2.16 mV.
+                </p>
+            </div>
+
+        </div>
+
+        <p>
+            The loaded voltage-transfer characteristic also remained
+            similar to the initial result, with the output bias point
+            staying near 0 V over the reported input range of
+            −3.4 V to +3.8 V.
+        </p>
+
+        <p>
+            Overall, the simulations indicated that the selected
+            compensation configuration met the phase-margin target
+            while maintaining the reported gain under the specified
+            resistive load.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- HARDWARE VALIDATION -->
+
+<section class="project-section">
+    <div class="container">
+
+        <p class="eyebrow">PROTOTYPING & VALIDATION</p>
+
+        <h2>From simulation to a discrete prototype</h2>
+
+        <p>
+            The project included a discrete prototype built using
+            commercially available BJT transistors. The overall
+            objective was to design, simulate, and validate the
+            operation of a general-purpose operational amplifier.
+        </p>
+
+        <p>
+            The analysis documented here focuses on the report's
+            LTspice results, including gain, input resistance,
+            frequency response, voltage-transfer characteristics,
+            operating ranges, and compensation. These simulation
+            results are distinguished from measured hardware
+            performance.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- FUTURE IMPROVEMENTS -->
+
+<section class="project-section project-section-alt">
+    <div class="container">
+
+        <p class="eyebrow">FUTURE IMPROVEMENTS</p>
+
+        <h2>Potential next steps</h2>
+
+        <ul class="project-list">
+            <li>
+                Compare simulated and measured gain, bandwidth,
+                and phase margin on the physical prototype.
+            </li>
+            <li>
+                Investigate the bandwidth reduction introduced
+                by the selected compensation capacitor.
+            </li>
+            <li>
+                Evaluate the effects of transistor variation and
+                parasitic capacitances on stability.
+            </li>
+            <li>
+                Further characterize distortion and output behaviour
+                across different load conditions.
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+
+<!-- KEY TECHNOLOGIES -->
+
+<section class="project-section project-technologies">
+    <div class="container">
+
+        <p class="eyebrow">KEY TECHNOLOGIES</p>
+
+        <div class="tags">
+            <span>BJT Circuit Design</span>
+            <span>LTspice</span>
+            <span>Differential Amplifiers</span>
+            <span>Class AB Output Stage</span>
+            <span>Frequency Response</span>
+            <span>Phase-Margin Analysis</span>
+            <span>Frequency Compensation</span>
+            <span>Analog Prototyping</span>
+            <span>Oscilloscope</span>
+            <span>Signal Generator</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                <strong>Philippe Olivier Fils</strong>
+                <p>Electrical Engineering & Hardware Design</p>
+            </div>
+
+            <div class="footer-links">
+                <a
+                    href="https://www.linkedin.com/in/philippeolivierfils"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+                <a href="mailto:philippe.fils@mail.mcgill.ca">
+                    Email
+                </a>
+            </div>
 
         </div>
 
     </div>
 </footer>
 
-</body> </html>
+</body> </html>s
